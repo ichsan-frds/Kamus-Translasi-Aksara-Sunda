@@ -66,6 +66,7 @@ if selected_kata == None:
                     url=f"?kata={kata}"
                 )
         else:
+            st.write("Hasil pencarian :")
             st.warning("Kata Tidak Ditemukan")
 else:
     st.markdown(f"## Aksara: `{selected_kata}`")
@@ -75,6 +76,7 @@ else:
         for t in terjemahan:
             st.markdown(f"#### {t}")
     else:
+        st.markdown(f"## Terjemahan: ")
         st.warning("Tidak Ditemukan Terjemahan")
 
     st.markdown("---")
