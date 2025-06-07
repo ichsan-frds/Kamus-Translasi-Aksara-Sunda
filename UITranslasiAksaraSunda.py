@@ -1,7 +1,11 @@
+import os
+from dotenv import load_dotenv
 import streamlit as st
 import requests
 
-FUSEKI_ENDPOINT = "http://localhost:3030/semweb-translasi-aksara-sunda-dataset-v1/query"
+load_dotenv()
+
+FUSEKI_ENDPOINT = os.getenv("FUSEKI_ENDPOINT")
 
 st.set_page_config(page_title="Kamus Aksara Sunda", layout="centered")
 st.title("Kamus Aksara Sunda")
