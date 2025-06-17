@@ -1,0 +1,5589 @@
+
+@prefix : <http://example.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# Deklarasi Kelas
+:Manuskrip a owl:Class .
+:SistemTulisan a owl:Class .
+:KataNaskah a owl:Class .
+:Terjemahan a owl:Class .
+
+# Deklarasi Properti
+:ditulisMenggunakan a owl:ObjectProperty ;
+    rdfs:domain :Manuskrip ;
+    rdfs:range :SistemTulisan .
+
+:berasalDariWilayah a owl:DatatypeProperty ;
+    rdfs:domain :SistemTulisan ;
+    rdfs:range xsd:string .
+
+:isFromManuscript a owl:ObjectProperty ;
+    rdfs:domain :KataNaskah ;
+    rdfs:range :Manuskrip .
+
+:hasTranslation a owl:ObjectProperty ;
+    rdfs:domain :KataNaskah ;
+    rdfs:range :Terjemahan .
+
+:keBahasa a owl:DatatypeProperty ;
+    rdfs:domain :Terjemahan ;
+    rdfs:range xsd:string .
+
+:dariBahasa a owl:DatatypeProperty ;
+    rdfs:domain :Terjemahan ;
+    rdfs:range xsd:string .
+
+# Deklarasi Individu (Instances)
+:naskahSunda01 a :Manuskrip ;
+    dcterms:title "Sanghyang Raga Dewata"@su ;
+    dcterms:creator "Kaum Brahmana" ;
+    dcterms:language "su" ;
+    :ditulisMenggunakan :AksaraSunda .
+
+:AksaraSunda a :SistemTulisan ;
+    rdfs:label "Aksara Sunda"@id ;
+    :berasalDariWilayah "Jawa Barat"@id .
+
+:kata001 a :KataNaskah ;
+    rdf:value "ndh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata001 ;
+    dcterms:identifier "SUNDA01-K001" .
+
+:terjemahkata001 a :Terjemahan ;
+    rdf:value "ini"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata002 a :KataNaskah ;
+    rdf:value "naraka"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata002 ;
+    dcterms:identifier "SUNDA01-K002" .
+
+:terjemahkata002 a :Terjemahan ;
+    rdf:value "neraka"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata003 a :KataNaskah ;
+    rdf:value "ujarrakna"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata003 ;
+    dcterms:identifier "SUNDA01-K003" .
+
+:terjemahkata003 a :Terjemahan ;
+    rdf:value "ucapan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata004 a :KataNaskah ;
+    rdf:value "wwa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata004 ;
+    dcterms:identifier "SUNDA01-K004" .
+
+:terjemahkata004 a :Terjemahan ;
+    rdf:value "orang-orang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata005 a :KataNaskah ;
+    rdf:value "kaidr"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata005 , :terjemahkata006 , :terjemahkata007 ;
+    dcterms:identifier "SUNDA01-K005" .
+
+:terjemahkata005 a :Terjemahan ;
+    rdf:value "tenggelam"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata006 a :Terjemahan ;
+    rdf:value "terpesona"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata007 a :Terjemahan ;
+    rdf:value "terkelilingi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata006 a :KataNaskah ;
+    rdf:value "lupa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata008 ;
+    dcterms:identifier "SUNDA01-K006" .
+
+:terjemahkata008 a :Terjemahan ;
+    rdf:value "lupa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata007 a :KataNaskah ;
+    rdf:value "tutup"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata009 ;
+    dcterms:identifier "SUNDA01-K007" .
+
+:terjemahkata009 a :Terjemahan ;
+    rdf:value "tutup"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata008 a :KataNaskah ;
+    rdf:value "ku"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata010 ;
+    dcterms:identifier "SUNDA01-K008" .
+
+:terjemahkata010 a :Terjemahan ;
+    rdf:value "oleh"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata009 a :KataNaskah ;
+    rdf:value "amingt"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata011 ;
+    dcterms:identifier "SUNDA01-K009" .
+
+:terjemahkata011 a :Terjemahan ;
+    rdf:value "tidak sadar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata010 a :KataNaskah ;
+    rdf:value "silib"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata012 , :terjemahkata013 ;
+    dcterms:identifier "SUNDA01-K010" .
+
+:terjemahkata012 a :Terjemahan ;
+    rdf:value "langkah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata013 a :Terjemahan ;
+    rdf:value "lewat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata011 a :KataNaskah ;
+    rdf:value "silipt"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata014 ;
+    dcterms:identifier "SUNDA01-K011" .
+
+:terjemahkata014 a :Terjemahan ;
+    rdf:value "sembunyi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata012 a :KataNaskah ;
+    rdf:value "ka"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata010 ;
+    dcterms:identifier "SUNDA01-K012" .
+
+:kata011 a :KataNaskah ;
+    rdf:value "silipt"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata014 ;
+    dcterms:identifier "SUNDA01-K011" .
+
+:terjemahkata014 a :Terjemahan ;
+    rdf:value "sembunyi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata012 a :KataNaskah ;
+    rdf:value "mala"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata015 , :terjemahkata016 ;
+    dcterms:identifier "SUNDA01-K012" .
+
+:terjemahkata015 a :Terjemahan ;
+    rdf:value "nista"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata016 a :Terjemahan ;
+    rdf:value "noda"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata013 a :KataNaskah ;
+    rdf:value "jati"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata017 ;
+    dcterms:identifier "SUNDA01-K013" .
+
+:terjemahkata017 a :Terjemahan ;
+    rdf:value "jati"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata014 a :KataNaskah ;
+    rdf:value "raga"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata018 ;
+    dcterms:identifier "SUNDA01-K014" .
+
+:terjemahkata018 a :Terjemahan ;
+    rdf:value "badan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata015 a :KataNaskah ;
+    rdf:value "ngaran"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata019 ;
+    dcterms:identifier "SUNDA01-K015" .
+
+:terjemahkata019 a :Terjemahan ;
+    rdf:value "nama"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata016 a :KataNaskah ;
+    rdf:value "turu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata020 ;
+    dcterms:identifier "SUNDA01-K016" .
+
+:terjemahkata020 a :Terjemahan ;
+    rdf:value "tidur"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata017 a :KataNaskah ;
+    rdf:value "jagra"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata021 ;
+    dcterms:identifier "SUNDA01-K017" .
+
+:terjemahkata021 a :Terjemahan ;
+    rdf:value "jaga"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata018 a :KataNaskah ;
+    rdf:value "ingtak"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata022 ;
+    dcterms:identifier "SUNDA01-K018" .
+
+:terjemahkata022 a :Terjemahan ;
+    rdf:value "ingat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata019 a :KataNaskah ;
+    rdf:value "ring"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata023 ;
+    dcterms:identifier "SUNDA01-K019" .
+
+:terjemahkata023 a :Terjemahan ;
+    rdf:value "saat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata020 a :KataNaskah ;
+    rdf:value "sangng"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata024 ;
+    dcterms:identifier "SUNDA01-K020" .
+
+:terjemahkata024 a :Terjemahan ;
+    rdf:value "siapapun"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata021 a :KataNaskah ;
+    rdf:value "tutur"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata025 ;
+    dcterms:identifier "SUNDA01-K021" .
+
+:terjemahkata025 a :Terjemahan ;
+    rdf:value "ucap"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata022 a :KataNaskah ;
+    rdf:value "memeh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata026 ;
+    dcterms:identifier "SUNDA01-K022" .
+
+:terjemahkata026 a :Terjemahan ;
+    rdf:value "sebelum"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata023 a :KataNaskah ;
+    rdf:value "ari"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata027 , :terjemahkata028 ;
+    dcterms:identifier "SUNDA01-K023" .
+
+:terjemahkata027 a :Terjemahan ;
+    rdf:value "jika"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata028 a :Terjemahan ;
+    rdf:value "maka"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata024 a :KataNaskah ;
+    rdf:value "hetas"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata029 ;
+    dcterms:identifier "SUNDA01-K024" .
+
+:terjemahkata029 a :Terjemahan ;
+    rdf:value "putus"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata025 a :KataNaskah ;
+    rdf:value "kna"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata030 ;
+    dcterms:identifier "SUNDA01-K025" .
+
+:terjemahkata030 a :Terjemahan ;
+    rdf:value "kena"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata026 a :KataNaskah ;
+    rdf:value "lipi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata031 , :terjemahkata032 ;
+    dcterms:identifier "SUNDA01-K026" .
+
+:terjemahkata031 a :Terjemahan ;
+    rdf:value "lenyap"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata032 a :Terjemahan ;
+    rdf:value "hilang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata027 a :KataNaskah ;
+    rdf:value "yyatna"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata033 ;
+    dcterms:identifier "SUNDA01-K027" .
+
+:terjemahkata033 a :Terjemahan ;
+    rdf:value "sesungguhnya"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata028 a :KataNaskah ;
+    rdf:value "leungit"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata031 ;
+    dcterms:identifier "SUNDA01-K028" .
+
+:kata029 a :KataNaskah ;
+    rdf:value "geuhan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata034 ;
+    dcterms:identifier "SUNDA01-K029" .
+
+:terjemahkata034 a :Terjemahan ;
+    rdf:value "keteguhan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata030 a :KataNaskah ;
+    rdf:value "ikang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata010 ;
+    dcterms:identifier "SUNDA01-K030" .
+
+:kata031 a :KataNaskah ;
+    rdf:value "kaparingkas"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata035 ;
+    dcterms:identifier "SUNDA01-K031" .
+
+:terjemahkata035 a :Terjemahan ;
+    rdf:value "terikat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata032 a :KataNaskah ;
+    rdf:value "maneh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata036 ;
+    dcterms:identifier "SUNDA01-K032" .
+
+:terjemahkata036 a :Terjemahan ;
+    rdf:value "diri"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata033 a :KataNaskah ;
+    rdf:value "haywa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata037 ;
+    dcterms:identifier "SUNDA01-K033" .
+
+:terjemahkata037 a :Terjemahan ;
+    rdf:value "jangan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata034 a :KataNaskah ;
+    rdf:value "tanghi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata021 , :terjemahkata038 ;
+    dcterms:identifier "SUNDA01-K034" .
+
+:terjemahkata038 a :Terjemahan ;
+    rdf:value "bangun"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata035 a :KataNaskah ;
+    rdf:value "prayatnakna"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata039 , :terjemahkata040 ;
+    dcterms:identifier "SUNDA01-K035" .
+
+:terjemahkata039 a :Terjemahan ;
+    rdf:value "waspadalah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata040 a :Terjemahan ;
+    rdf:value "awasilah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata036 a :KataNaskah ;
+    rdf:value "ring"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata041 , :terjemahkata042 ;
+    dcterms:identifier "SUNDA01-K036" .
+
+:terjemahkata041 a :Terjemahan ;
+    rdf:value "kepada"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata042 a :Terjemahan ;
+    rdf:value "terhadap"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata037 a :KataNaskah ;
+    rdf:value "atapa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata043 ;
+    dcterms:identifier "SUNDA01-K037" .
+
+:terjemahkata043 a :Terjemahan ;
+    rdf:value "bertapa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata038 a :KataNaskah ;
+    rdf:value "awruh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata044 , :terjemahkata045 ;
+    dcterms:identifier "SUNDA01-K038" .
+
+:terjemahkata044 a :Terjemahan ;
+    rdf:value "mengetahui"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata045 a :Terjemahan ;
+    rdf:value "paham"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata039 a :KataNaskah ;
+    rdf:value "adoh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata046 ;
+    dcterms:identifier "SUNDA01-K039" .
+
+:terjemahkata046 a :Terjemahan ;
+    rdf:value "jauh"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata040 a :KataNaskah ;
+    rdf:value "sarira"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata047 ;
+    dcterms:identifier "SUNDA01-K040" .
+
+:terjemahkata047 a :Terjemahan ;
+    rdf:value "diri"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata041 a :KataNaskah ;
+    rdf:value "tan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata048 ;
+    dcterms:identifier "SUNDA01-K041" .
+
+:terjemahkata048 a :Terjemahan ;
+    rdf:value "tidak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata042 a :KataNaskah ;
+    rdf:value "carita"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata049 ;
+    dcterms:identifier "SUNDA01-K042" .
+
+:terjemahkata049 a :Terjemahan ;
+    rdf:value "cerita"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata043 a :KataNaskah ;
+    rdf:value "wruh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata050 ;
+    dcterms:identifier "SUNDA01-K043" .
+
+:terjemahkata050 a :Terjemahan ;
+    rdf:value "tahu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata044 a :KataNaskah ;
+    rdf:value "niskala"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata051 ;
+    dcterms:identifier "SUNDA01-K044" .
+
+:terjemahkata051 a :Terjemahan ;
+    rdf:value "alam gaib"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata045 a :KataNaskah ;
+    rdf:value "niskala"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata038 ;
+    dcterms:identifier "SUNDA01-K045" .
+
+:kata046 a :KataNaskah ;
+    rdf:value "sangkala"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata052 , :terjemahkata053 ;
+    dcterms:identifier "SUNDA01-K046" .
+
+:terjemahkata052 a :Terjemahan ;
+    rdf:value "jeratan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata053 a :Terjemahan ;
+    rdf:value "jebakan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata047 a :KataNaskah ;
+    rdf:value "sarp"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata054 , :terjemahkata055 ;
+    dcterms:identifier "SUNDA01-K047" .
+
+:terjemahkata054 a :Terjemahan ;
+    rdf:value "begitu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata055 a :Terjemahan ;
+    rdf:value "ketika"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata048 a :KataNaskah ;
+    rdf:value "urang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata056 , :terjemahkata057 ;
+    dcterms:identifier "SUNDA01-K048" .
+
+:terjemahkata056 a :Terjemahan ;
+    rdf:value "aku"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata057 a :Terjemahan ;
+    rdf:value "saya"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata049 a :KataNaskah ;
+    rdf:value "beurang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata058 ;
+    dcterms:identifier "SUNDA01-K049" .
+
+:terjemahkata058 a :Terjemahan ;
+    rdf:value "siang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata050 a :KataNaskah ;
+    rdf:value "supta"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata059 ;
+    dcterms:identifier "SUNDA01-K050" .
+
+:kata051 a :KataNaskah ;
+    rdf:value "peuting"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata059 ;
+    dcterms:identifier "SUNDA01-K051" .
+
+:terjemahkata059 a :Terjemahan ;
+    rdf:value "malam"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata052 a :KataNaskah ;
+    rdf:value "pteng"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata060 ;
+    dcterms:identifier "SUNDA01-K052" .
+
+:terjemahkata060 a :Terjemahan ;
+    rdf:value "gelap"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata053 a :KataNaskah ;
+    rdf:value "pwek"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata061 ;
+    dcterms:identifier "SUNDA01-K053" .
+
+:terjemahkata061 a :Terjemahan ;
+    rdf:value "gulita"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata054 a :KataNaskah ;
+    rdf:value "rasa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata062 ;
+    dcterms:identifier "SUNDA01-K054" .
+
+:terjemahkata062 a :Terjemahan ;
+    rdf:value "rasa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata055 a :KataNaskah ;
+    rdf:value "ulah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata063 ;
+    dcterms:identifier "SUNDA01-K055" .
+
+:terjemahkata063 a :Terjemahan ;
+    rdf:value "jangan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata056 a :KataNaskah ;
+    rdf:value "tuluy"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata064 ;
+    dcterms:identifier "SUNDA01-K056" .
+
+:terjemahkata064 a :Terjemahan ;
+    rdf:value "terus-menerus"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata057 a :KataNaskah ;
+    rdf:value "peureum"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata065 ;
+    dcterms:identifier "SUNDA01-K057" .
+
+:terjemahkata065 a :Terjemahan ;
+    rdf:value "merem"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata058 a :KataNaskah ;
+    rdf:value "aplu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata066 ;
+    dcterms:identifier "SUNDA01-K058" .
+
+:terjemahkata066 a :Terjemahan ;
+    rdf:value "apalagi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata059 a :KataNaskah ;
+    rdf:value "kerek"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata067 ;
+    dcterms:identifier "SUNDA01-K059" .
+
+:terjemahkata067 a :Terjemahan ;
+    rdf:value "mendengkur"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata060 a :KataNaskah ;
+    rdf:value "pwehhan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata068 ;
+    dcterms:identifier "SUNDA01-K060" .
+
+:terjemahkata068 a :Terjemahan ;
+    rdf:value "lupa waktu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata061 a :KataNaskah ;
+    rdf:value "bawa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata069 ;
+    dcterms:identifier "SUNDA01-K061" .
+
+:terjemahkata069 a :Terjemahan ;
+    rdf:value "bawa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata062 a :KataNaskah ;
+    rdf:value "bayu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata070 , :terjemahkata071 ;
+    dcterms:identifier "SUNDA01-K062" .
+
+:terjemahkata070 a :Terjemahan ;
+    rdf:value "kekuatan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata071 a :Terjemahan ;
+    rdf:value "energi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata063 a :KataNaskah ;
+    rdf:value "nyaho"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata072 ;
+    dcterms:identifier "SUNDA01-K063" .
+
+:terjemahkata072 a :Terjemahan ;
+    rdf:value "tahu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata064 a :KataNaskah ;
+    rdf:value "hudang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata073 ;
+    dcterms:identifier "SUNDA01-K064" .
+
+:terjemahkata073 a :Terjemahan ;
+    rdf:value "bangun"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" . 
+
+:kata065 a :KataNaskah ;
+    rdf:value "aing"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata074 ;
+    dcterms:identifier "SUNDA01-K065" .
+
+:terjemahkata074 a :Terjemahan ;
+    rdf:value "aku"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata066 a :KataNaskah ;
+    rdf:value "anggeus"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata075 ;
+    dcterms:identifier "SUNDA01-K066" .
+
+:terjemahkata075 a :Terjemahan ;
+    rdf:value "setelah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata067 a :KataNaskah ;
+    rdf:value "aya"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata076 ;
+    dcterms:identifier "SUNDA01-K067" .
+
+:terjemahkata076 a :Terjemahan ;
+    rdf:value "ada"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata068 a :KataNaskah ;
+    rdf:value "bumi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata077 ;
+    dcterms:identifier "SUNDA01-K068" .
+
+:terjemahkata077 a :Terjemahan ;
+    rdf:value "bumi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata069 a :KataNaskah ;
+    rdf:value "bwana"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata078 , :terjemahkata079 ;
+    dcterms:identifier "SUNDA01-K069".
+
+:terjemahkata078 a :Terjemahan ;
+    rdf:value "dunia"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata079 a :Terjemahan ;
+    rdf:value "jagat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata070 a :KataNaskah ;
+    rdf:value "carek"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata080 , :terjemahkata081 ;
+    dcterms:identifier "SUNDA01-K070".
+
+:terjemahkata080 a :Terjemahan ;
+    rdf:value "kata"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata081 a :Terjemahan ;
+    rdf:value "berkata"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata071 a :KataNaskah ;
+    rdf:value "dek"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata082 ;
+    dcterms:identifier "SUNDA01-K071".
+
+:terjemahkata082 a :Terjemahan ;
+    rdf:value "akan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata072 a :KataNaskah ;
+    rdf:value "dewata"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata083 ;
+    dcterms:identifier "SUNDA01-K072".
+
+:terjemahkata083 a :Terjemahan ;
+    rdf:value "dewa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata073 a :KataNaskah ;
+    rdf:value "eusi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata084 ;
+    dcterms:identifier "SUNDA01-K073".
+
+:terjemahkata084 a :Terjemahan ;
+    rdf:value "isi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata074 a :KataNaskah ;
+    rdf:value "gaway"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata085 , :terjemahkata086 ;
+    dcterms:identifier "SUNDA01-K074".
+
+:terjemahkata085 a :Terjemahan ;
+    rdf:value "buat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata086 a :Terjemahan ;
+    rdf:value "kerja"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata075 a :KataNaskah ;
+    rdf:value "guru"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata087 ;
+    dcterms:identifier "SUNDA01-K075".
+
+:terjemahkata087 a :Terjemahan ;
+    rdf:value "guru"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata076 a :KataNaskah ;
+    rdf:value "hana"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata088 ;
+    dcterms:identifier "SUNDA01-K076".
+
+:terjemahkata088 a :Terjemahan ;
+    rdf:value "ada"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata077 a :KataNaskah ;
+    rdf:value "hanteu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata089 ;
+    dcterms:identifier "SUNDA01-K077".
+
+:terjemahkata089 a :Terjemahan ;
+    rdf:value "tidak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata078 a :KataNaskah ;
+    rdf:value "hantiga"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata090 ;
+    dcterms:identifier "SUNDA01-K078".
+
+:terjemahkata090 a :Terjemahan ;
+    rdf:value "kematian"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata079 a :KataNaskah ;
+    rdf:value "hdap"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata091 , :terjemahkata092 ;
+    dcterms:identifier "SUNDA01-K079".
+
+:terjemahkata091 a :Terjemahan ;
+    rdf:value "hidup"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata092 a :Terjemahan ;
+    rdf:value "nafas"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata080 a :KataNaskah ;
+    rdf:value "hurip"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata091 ;
+    dcterms:identifier "SUNDA01-K080".
+
+:kata081 a :KataNaskah ;
+    rdf:value "inya"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata093 , :terjemahkata094 ;
+    dcterms:identifier "SUNDA01-K081".
+
+:terjemahkata093 a :Terjemahan ;
+    rdf:value "dia"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata094 a :Terjemahan ;
+    rdf:value "itu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata082 a :KataNaskah ;
+    rdf:value "jadi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata095 , :terjemahkata096 ;
+    dcterms:identifier "SUNDA01-K082".
+
+:terjemahkata095 a :Terjemahan ;
+    rdf:value "jadi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata096 a :Terjemahan ;
+    rdf:value "menjadi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata083 a :KataNaskah ;
+    rdf:value "ka"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata097 ;
+    dcterms:identifier "SUNDA01-K083".
+
+:terjemahkata097 a :Terjemahan ;
+    rdf:value "ke"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata084 a :KataNaskah ;
+    rdf:value "kala"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata098 ;
+    dcterms:identifier "SUNDA01-K084".
+
+:terjemahkata098 a :Terjemahan ;
+    rdf:value "waktu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata085 a :KataNaskah ;
+    rdf:value "kana"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata099 ;
+    dcterms:identifier "SUNDA01-K085".
+
+:terjemahkata099 a :Terjemahan ;
+    rdf:value "pada"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata086 a :KataNaskah ;
+    rdf:value "ku"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata100 , :terjemahkata101 ;
+    dcterms:identifier "SUNDA01-K086".
+
+:terjemahkata100 a :Terjemahan ;
+    rdf:value "oleh"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+    
+:terjemahkata101 a :Terjemahan ;
+    rdf:value "dengan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata087 a :KataNaskah ;
+    rdf:value "lamun"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata102 ;
+    dcterms:identifier "SUNDA01-K087".
+
+:terjemahkata102 a :Terjemahan ;
+    rdf:value "jika"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata088 a :KataNaskah ;
+    rdf:value "lmah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata103 ;
+    dcterms:identifier "SUNDA01-K088".
+
+:terjemahkata103 a :Terjemahan ;
+    rdf:value "tanah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata089 a :KataNaskah ;
+    rdf:value "mana"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata104 , :terjemahkata105 ;
+    dcterms:identifier "SUNDA01-K089".
+
+:terjemahkata104 a :Terjemahan ;
+    rdf:value "mana"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata105 a :Terjemahan ;
+    rdf:value "yang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata090 a :KataNaskah ;
+    rdf:value "mangkat"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata106 ;
+    dcterms:identifier "SUNDA01-K090".
+
+:terjemahkata106 a :Terjemahan ;
+    rdf:value "pergi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata091 a :KataNaskah ;
+    rdf:value "majar"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata107 ;
+    dcterms:identifier "SUNDA01-K091".
+
+:terjemahkata107 a :Terjemahan ;
+    rdf:value "kata"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata092 a :KataNaskah ;
+    rdf:value "mata"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata108 ;
+    dcterms:identifier "SUNDA01-K092".
+
+:terjemahkata108 a :Terjemahan ;
+    rdf:value "mata"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata093 a :KataNaskah ;
+    rdf:value "mtu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata109 ;
+    dcterms:identifier "SUNDA01-K093".
+
+:terjemahkata109 a :Terjemahan ;
+    rdf:value "keluar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata094 a :KataNaskah ;
+    rdf:value "na"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata110 ;
+    dcterms:identifier "SUNDA01-K094".
+
+:terjemahkata110 a :Terjemahan ;
+    rdf:value "yang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata095 a :KataNaskah ;
+    rdf:value "ngaran"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata111 ;
+    dcterms:identifier "SUNDA01-K095".
+
+:terjemahkata111 a :Terjemahan ;
+    rdf:value "nama"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata096 a :KataNaskah ;
+    rdf:value "ngaranna"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata112 ;
+    dcterms:identifier "SUNDA01-K096".
+
+:terjemahkata112 a :Terjemahan ;
+    rdf:value "namanya"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata097 a :KataNaskah ;
+    rdf:value "nu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata113 ;
+    dcterms:identifier "SUNDA01-K097".
+
+:terjemahkata113 a :Terjemahan ;
+    rdf:value "yang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata098 a :KataNaskah ;
+    rdf:value "nya"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata114 ;
+    dcterms:identifier "SUNDA01-K098".
+
+:terjemahkata114 a :Terjemahan ;
+    rdf:value "dia"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata099 a :KataNaskah ;
+    rdf:value "nyah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata115 ;
+    dcterms:identifier "SUNDA01-K099".
+
+:terjemahkata115 a :Terjemahan ;
+    rdf:value "mata"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata100 a :KataNaskah ;
+    rdf:value "paeh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata116 ;
+    dcterms:identifier "SUNDA01-K100".
+
+:terjemahkata116 a :Terjemahan ;
+    rdf:value "mati"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata101 a :KataNaskah ;
+    rdf:value "prang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata117 ;
+    dcterms:identifier "SUNDA01-K101".
+
+:terjemahkata117 a :Terjemahan ;
+    rdf:value "perang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata102 a :KataNaskah ;
+    rdf:value "raga"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata118 ;
+    dcterms:identifier "SUNDA01-K102".
+
+:terjemahkata118 a :Terjemahan ;
+    rdf:value "badan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata103 a :KataNaskah ;
+    rdf:value "rupa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata119 ;
+    dcterms:identifier "SUNDA01-K103".
+
+:terjemahkata119 a :Terjemahan ;
+    rdf:value "bentuk"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata104 a :KataNaskah ;
+    rdf:value "sabda"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata120 ;
+    dcterms:identifier "SUNDA01-K104".
+
+:terjemahkata120 a :Terjemahan ;
+    rdf:value "kata"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata105 a :KataNaskah ;
+    rdf:value "sakti"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata121 ;
+    dcterms:identifier "SUNDA01-K105".
+
+:terjemahkata121 a :Terjemahan ;
+    rdf:value "kekuatan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata106 a :KataNaskah ;
+    rdf:value "sang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata122 ;
+    dcterms:identifier "SUNDA01-K106".
+
+:terjemahkata122 a :Terjemahan ;
+    rdf:value "sang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata107 a :KataNaskah ;
+    rdf:value "sanghyang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata123 , :terjemahkata124 ;
+    dcterms:identifier "SUNDA01-K107".
+
+:terjemahkata123 a :Terjemahan ;
+    rdf:value "suci"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata123 a :Terjemahan ;
+    rdf:value "ilahi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata108 a :KataNaskah ;
+    rdf:value "sarira"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata125 , :terjemahkata126 ;
+    dcterms:identifier "SUNDA01-K108".
+
+:terjemahkata125 a :Terjemahan ;
+    rdf:value "jasad"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata126 a :Terjemahan ;
+    rdf:value "badan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata109 a :KataNaskah ;
+    rdf:value "seda"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata127 ;
+    dcterms:identifier "SUNDA01-K109".
+
+:terjemahkata127 a :Terjemahan ;
+    rdf:value "sempurna"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .    
+
+:kata110 a :KataNaskah ;
+    rdf:value "siwa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata128 ;
+    dcterms:identifier "SUNDA01-K110".
+
+:terjemahkata128 a :Terjemahan ;
+    rdf:value "siwa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata111 a :KataNaskah ;
+    rdf:value "ta"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata129 ;
+    dcterms:identifier "SUNDA01-K111".
+
+:terjemahkata129 a :Terjemahan ;
+    rdf:value "lah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata112 a :KataNaskah ;
+    rdf:value "tan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata130 ;
+    dcterms:identifier "SUNDA01-K112".
+
+:terjemahkata130 a :Terjemahan ;
+    rdf:value "tidak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata113 a :KataNaskah ;
+    rdf:value "taya"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata131 ;
+    dcterms:identifier "SUNDA01-K113".
+
+:terjemahkata131 a :Terjemahan ;
+    rdf:value "tidak ada"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata114 a :KataNaskah ;
+    rdf:value "ti"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata132 ;
+    dcterms:identifier "SUNDA01-K114".
+
+:terjemahkata132 a :Terjemahan ;
+    rdf:value "dari"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata115 a :KataNaskah ;
+    rdf:value "tugal"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata133 ;
+    dcterms:identifier "SUNDA01-K115".
+
+:terjemahkata133 a :Terjemahan ;
+    rdf:value "tunggal"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .    
+
+:kata116 a :KataNaskah ;
+    rdf:value "usik"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata134 ;
+    dcterms:identifier "SUNDA01-K116".
+
+:terjemahkata134 a :Terjemahan ;
+    rdf:value "gerak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata117 a :KataNaskah ;
+    rdf:value "warna"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata135 ;
+    dcterms:identifier "SUNDA01-K117".
+
+:terjemahkata135 a :Terjemahan ;
+    rdf:value "warna"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata118 a :KataNaskah ;
+    rdf:value "waya"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata136 , :terjemahkata137 ;
+    dcterms:identifier "SUNDA01-K118".
+
+:terjemahkata136 a :Terjemahan ;
+    rdf:value "ada"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata137 a :Terjemahan ;
+    rdf:value "nyata"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata119 a :KataNaskah ;
+    rdf:value "yuga"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata138 ;
+    dcterms:identifier "SUNDA01-K119".
+
+:terjemahkata138 a :Terjemahan ;
+    rdf:value "ciptaan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .    
+
+:kata120 a :KataNaskah ;
+    rdf:value "ningah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata139 ;
+    dcterms:identifier "SUNDA01-K120".
+
+:terjemahkata139 a :Terjemahan ;
+    rdf:value "tampak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata121 a :KataNaskah ;
+    rdf:value "hwas"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata140 ;
+    dcterms:identifier "SUNDA01-K121".
+
+:terjemahkata140 a :Terjemahan ;
+    rdf:value "seperti"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .  
+
+:kata122 a :KataNaskah ;
+    rdf:value "leutik"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata141 , :terjemahkata142 ;
+    dcterms:identifier "SUNDA01-K122".
+
+:terjemahkata141 a :Terjemahan ;
+    rdf:value "kecil"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata142 a :Terjemahan ;
+    rdf:value "halus"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata123 a :KataNaskah ;
+    rdf:value "becet"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata143 ;
+    dcterms:identifier "SUNDA01-K123".
+
+:terjemahkata143 a :Terjemahan ;
+    rdf:value "kecil"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .  
+
+:kata124 a :KataNaskah ;
+    rdf:value "cwar"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata144 ;
+    dcterms:identifier "SUNDA01-K124".
+
+:terjemahkata144 a :Terjemahan ;
+    rdf:value "keluar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata125 a :KataNaskah ;
+    rdf:value "cai"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata145 ;
+    dcterms:identifier "SUNDA01-K125".
+
+:terjemahkata145 a :Terjemahan ;
+    rdf:value "air"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" . 
+
+:kata126 a :KataNaskah ;
+    rdf:value "darah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata146 ;
+    dcterms:identifier "SUNDA01-K126".
+
+:terjemahkata146 a :Terjemahan ;
+    rdf:value "darah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" . 
+
+:kata127 a :KataNaskah ;
+    rdf:value "langit"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata147 ;
+    dcterms:identifier "SUNDA01-K127".
+
+:terjemahkata147 a :Terjemahan ;
+    rdf:value "langit"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" . 
+
+:kata128 a :KataNaskah ;
+    rdf:value "acan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata148 ;
+    dcterms:identifier "SUNDA01-K128".
+
+:terjemahkata148 a :Terjemahan ;
+    rdf:value "belum"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" . 
+
+:kata129 a :KataNaskah ;
+    rdf:value "tiis"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata149 ;
+    dcterms:identifier "SUNDA01-K129".
+
+:terjemahkata149 a :Terjemahan ;
+    rdf:value "dingin"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata130 a :KataNaskah ;
+    rdf:value "palipurna"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata150 ;
+    dcterms:identifier "SUNDA01-K130".
+
+:terjemahkata150 a :Terjemahan ;
+    rdf:value "sempurna"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .  
+
+:kata131 a :KataNaskah ;
+    rdf:value "rahasye"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata151 ;
+    dcterms:identifier "SUNDA01-K131".
+
+:terjemahkata151 a :Terjemahan ;
+    rdf:value "rahasia"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" . 
+
+:kata132 a :KataNaskah ;
+    rdf:value "langgng"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata152 ;
+    dcterms:identifier "SUNDA01-K132".
+
+:terjemahkata152 a :Terjemahan ;
+    rdf:value "abadi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata133 a :KataNaskah ;
+    rdf:value "herang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata153 , :terjemahkata154 ;
+    dcterms:identifier "SUNDA01-K133".
+
+:terjemahkata153 a :Terjemahan ;
+    rdf:value "bening"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata154 a :Terjemahan ;
+    rdf:value "suci"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .  
+
+:kata134 a :KataNaskah ;
+    rdf:value "murub"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata155 ;
+    dcterms:identifier "SUNDA01-K134".
+
+:terjemahkata155 a :Terjemahan ;
+    rdf:value "menyala"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" . 
+
+:kata135 a :KataNaskah ;
+    rdf:value "mucar"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata156 ;
+    dcterms:identifier "SUNDA01-K135".
+
+:terjemahkata156 a :Terjemahan ;
+    rdf:value "benderang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" . 
+
+:kata136 a :KataNaskah ;
+    rdf:value "sadakala"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata157 ;
+    dcterms:identifier "SUNDA01-K136".
+
+:terjemahkata157 a :Terjemahan ;
+    rdf:value "sediakala"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata137 a :KataNaskah ;
+    rdf:value "kaswargaan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata158 ;
+    dcterms:identifier "SUNDA01-K137".
+
+:terjemahkata158 a :Terjemahan ;
+    rdf:value "surga"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata138 a :KataNaskah ;
+    rdf:value "kasorgaan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata159 ;
+    dcterms:identifier "SUNDA01-K138".
+
+:terjemahkata159 a :Terjemahan ;
+    rdf:value "surga"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata139 a :KataNaskah ;
+    rdf:value "molah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata160 ;
+    dcterms:identifier "SUNDA01-K139".
+
+:terjemahkata160 a :Terjemahan ;
+    rdf:value "keluar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata140 a :KataNaskah ;
+    rdf:value "mabka"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata161 ;
+    dcterms:identifier "SUNDA01-K140".
+
+:terjemahkata161 a :Terjemahan ;
+    rdf:value "bernapas"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata141 a :KataNaskah ;
+    rdf:value "hiri"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata162 ;
+    dcterms:identifier "SUNDA01-K141".
+
+:terjemahkata162 a :Terjemahan ;
+    rdf:value "berpikir"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata142 a :KataNaskah ;
+    rdf:value "duduh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata163 ;
+    dcterms:identifier "SUNDA01-K142".
+
+:terjemahkata163 a :Terjemahan ;  
+    rdf:value "jangan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata143 a :KataNaskah ;
+    rdf:value "timburu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata164 ;
+    dcterms:identifier "SUNDA01-K143".
+
+:terjemahkata164 a :Terjemahan ;
+    rdf:value "cemburu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata144 a :KataNaskah ;
+    rdf:value "kumlab"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata165 ;
+    dcterms:identifier "SUNDA01-K144".
+
+:terjemahkata165 a :Terjemahan ;
+    rdf:value "menggelegak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata145 a :KataNaskah ;
+    rdf:value "panas"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata166 ;
+    dcterms:identifier "SUNDA01-K145".
+
+:terjemahkata166 a :Terjemahan ;
+    rdf:value "panas"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata146 a :KataNaskah ;
+    rdf:value "hate"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata167 ;
+    dcterms:identifier "SUNDA01-K146".
+
+:terjemahkata167 a :Terjemahan ; 
+    rdf:value "hati"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata147 a :KataNaskah ;
+    rdf:value "yugana"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata168 ;
+    dcterms:identifier "SUNDA01-K147".
+
+:terjemahkata168 a :Terjemahan ;
+    rdf:value "yang menciptakan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata148 a :KataNaskah ;
+    rdf:value "pongpro"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata169 ;
+    dcterms:identifier "SUNDA01-K148".
+
+:terjemahkata169 a :Terjemahan ;
+    rdf:value "terlontar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata149 a :KataNaskah ;
+    rdf:value "golong"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata170 ;
+    dcterms:identifier "SUNDA01-K149".
+
+:terjemahkata170 a :Terjemahan ;
+    rdf:value "berkata"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata150 a :KataNaskah ;
+    rdf:value "tong"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata171 ;
+    dcterms:identifier "SUNDA01-K150".  
+
+:terjemahkata171 a :Terjemahan ;
+    rdf:value "jangan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata151 a :KataNaskah ;
+    rdf:value "leungga"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata172 ;
+    dcterms:identifier "SUNDA01-K151".
+
+:terjemahkata172 a :Terjemahan ;
+    rdf:value "memberi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata152 a :KataNaskah ;
+    rdf:value "song"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata173  ;
+    dcterms:identifier "SUNDA01-K152".
+
+:terjemahkata173 a :Terjemahan ;
+    rdf:value "perlindungan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata153 a :KataNaskah ;
+    rdf:value "spang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata174 ;
+    dcterms:identifier "SUNDA01-K153".
+
+:terjemahkata174 a :Terjemahan ; 
+    rdf:value "tercerahkan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata154 a :KataNaskah ;
+    rdf:value "spung"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata175 ;
+    dcterms:identifier "SUNDA01-K154".
+
+:terjemahkata175 a :Terjemahan ;
+    rdf:value "menyatu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata155 a :KataNaskah ;
+    rdf:value "nyumpah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata176 ;
+    dcterms:identifier "SUNDA01-K155".
+
+:terjemahkata176 a :Terjemahan ;
+    rdf:value "sumpah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata156 a :KataNaskah ;
+    rdf:value "madahkeun"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata177 ;
+    dcterms:identifier "SUNDA01-K156" .
+
+:terjemahkata177 a :Terjemahan ;
+    rdf:value "mengatakan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata157 a :KataNaskah ;
+    rdf:value "konta"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata178 ;
+    dcterms:identifier "SUNDA01-K157".
+
+:terjemahkata178 a :Terjemahan ;
+    rdf:value "tombak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata158 a :KataNaskah ;
+    rdf:value "bareta"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata179 ;
+    dcterms:identifier "SUNDA01-K158".
+
+:terjemahkata179 a :Terjemahan ;
+    rdf:value "berita"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata159 a :KataNaskah ;
+    rdf:value "dibasa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata180 ;
+    dcterms:identifier "SUNDA01-K159".
+
+:terjemahkata180 a :Terjemahan ;
+    rdf:value "dikatakan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata160 a :KataNaskah ;
+    rdf:value "adi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata181 ;
+    dcterms:identifier "SUNDA01-K160".
+
+:terjemahkata181 a :Terjemahan ;
+    rdf:value "adik"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata161 a :KataNaskah ;
+    rdf:value "lanyceuk"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata182 ;
+    dcterms:identifier "SUNDA01-K161".
+
+:terjemahkata182 a :Terjemahan ;
+    rdf:value "kakak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata162 a :KataNaskah ;
+    rdf:value "kula"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata183 ;
+    dcterms:identifier "SUNDA01-K162".
+
+:terjemahkata183 a :Terjemahan ;
+    rdf:value "keluarga"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata163 a :KataNaskah ;
+    rdf:value "kadang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata184 ;
+    dcterms:identifier "SUNDA01-K163".
+
+:terjemahkata184 a :Terjemahan ;
+    rdf:value "saudara"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata164 a :KataNaskah ;
+    rdf:value "baraya"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata185 ;
+    dcterms:identifier "SUNDA01-K164".
+
+:terjemahkata185 a :Terjemahan ;
+    rdf:value "saudara"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata166 a :KataNaskah ;
+    rdf:value "nala"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata186 , :terjemahkata187 , :terjemahkata188 ;
+    dcterms:identifier "SUNDA01-K166" .
+
+:terjemahkata186 a :Terjemahan ;
+    rdf:value "hati"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata187 a :Terjemahan ;
+    rdf:value "perasaan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata188 a :Terjemahan ;
+    rdf:value "pikiran batin"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata167 a :KataNaskah ;
+    rdf:value "ngaworran"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata189 ;
+    dcterms:identifier "SUNDA01-K167".
+
+:terjemahkata189 a :Terjemahan ;
+    rdf:value "mencampuri"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata168 a :KataNaskah ;
+    rdf:value "kawah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata190 ;
+    dcterms:identifier "SUNDA01-K168".
+
+:terjemahkata190 a :Terjemahan ;
+    rdf:value "neraka"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata169 a :KataNaskah ;
+    rdf:value "batu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata191 ;
+    dcterms:identifier "SUNDA01-K169".
+
+:terjemahkata191 a :Terjemahan ;
+    rdf:value "batu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata170 a :KataNaskah ;
+    rdf:value "kacakup"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata192 ;
+    dcterms:identifier "SUNDA01-K170".
+
+:terjemahkata192 a :Terjemahan ;
+    rdf:value "tertutup"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata171 a :KataNaskah ;
+    rdf:value "cukang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata193 ;
+    dcterms:identifier "SUNDA01-K171".
+
+:terjemahkata193 a :Terjemahan ;
+    rdf:value "jembatan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata172 a :KataNaskah ;
+    rdf:value "cueut"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata194 ;
+    dcterms:identifier "SUNDA01-K172".
+
+:terjemahkata194 a :Terjemahan ;
+    rdf:value "sempit"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata173 a :KataNaskah ;
+    rdf:value "latak"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata195 ;
+    dcterms:identifier "SUNDA01-K173".
+
+:terjemahkata195 a :Terjemahan ;
+    rdf:value "sebab"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata174 a :KataNaskah ;
+    rdf:value "sigala"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata196 ;
+    dcterms:identifier "SUNDA01-K174".
+
+:terjemahkata196 a :Terjemahan ;
+    rdf:value "segala"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata175 a :KataNaskah ;
+    rdf:value "gadamah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata197 ;
+    dcterms:identifier "SUNDA01-K175".
+
+:terjemahkata197 a :Terjemahan ;
+    rdf:value "penderitaan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .  
+
+:kata176 a :KataNaskah ;
+    rdf:value "kapapaan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata198 ;
+    dcterms:identifier "SUNDA01-K176".
+
+:terjemahkata198 a :Terjemahan ;
+    rdf:value "kenistaan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata177 a :KataNaskah ;
+    rdf:value "papa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata199 ;
+    dcterms:identifier "SUNDA01-K177".
+
+:terjemahkata199 a :Terjemahan ;
+    rdf:value "menderita"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata178 a :KataNaskah ;
+    rdf:value "dipiguna"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata200 ;
+    dcterms:identifier "SUNDA01-K178".
+
+:terjemahkata200 a :Terjemahan ;
+    rdf:value "digunakan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata179 a :KataNaskah ;
+    rdf:value "basana"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata201 ;
+    dcterms:identifier "SUNDA01-K179".
+
+:terjemahkata201 a :Terjemahan ;
+    rdf:value "katanya"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata180 a :KataNaskah ; 
+    rdf:value "sapeupeus"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata202 ;
+    dcterms:identifier "SUNDA01-K180".
+
+:terjemahkata202 a :Terjemahan ;
+    rdf:value "setelah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata181 a :KataNaskah ;
+    rdf:value "windu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata203 ;
+    dcterms:identifier "SUNDA01-K181".
+
+:terjemahkata203 a :Terjemahan ;
+    rdf:value "pecah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata182 a :KataNaskah ;
+    rdf:value "sabcar"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata204 ;
+    dcterms:identifier "SUNDA01-K182".
+
+:terjemahkata204 a :Terjemahan ;
+    rdf:value "menetes"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata183 a :KataNaskah ;
+    rdf:value "gamasana"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata205 ;
+    dcterms:identifier "SUNDA01-K183".
+
+:terjemahkata205 a :Terjemahan ;
+    rdf:value "kemudian"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata184 a :KataNaskah ;
+    rdf:value "pet"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata206 ;
+    dcterms:identifier "SUNDA01-K184".
+
+:terjemahkata206 a :Terjemahan ;
+    rdf:value "gelap"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata185 a :KataNaskah ;
+    rdf:value "lawet"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata207 ;
+    dcterms:identifier "SUNDA01-K185".
+
+:terjemahkata207 a :Terjemahan ;
+    rdf:value "bersinar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata186 a :KataNaskah ;
+    rdf:value "kwak"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata208 ;
+    dcterms:identifier "SUNDA01-K186".
+
+:terjemahkata208 a :Terjemahan ;
+    rdf:value "tumbang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata187 a :KataNaskah ;
+    rdf:value "itik"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata209 ;
+    dcterms:identifier "SUNDA01-K187".
+
+:terjemahkata209 a :Terjemahan ;
+    rdf:value "bebek"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata188 a :KataNaskah ;
+    rdf:value "nangah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata210 ;
+    dcterms:identifier "SUNDA01-K188".
+
+:terjemahkata210 a :Terjemahan ;
+    rdf:value "tengah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata189 a :KataNaskah ;
+    rdf:value "ngeusi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata211 ;
+    dcterms:identifier "SUNDA01-K189".
+
+:terjemahkata211 a :Terjemahan ;
+    rdf:value "mengisi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata190 a :KataNaskah ;
+    rdf:value "lawan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata212 ;
+    dcterms:identifier "SUNDA01-K190".
+
+:terjemahkata212 a :Terjemahan ;
+    rdf:value "dengan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata191 a :KataNaskah ;
+    rdf:value "nigalkeun"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata213 ;
+    dcterms:identifier "SUNDA01-K191".
+
+:terjemahkata213 a :Terjemahan ;
+    rdf:value "berwujud"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata192 a :KataNaskah ;
+    rdf:value "kna"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata214 ;
+    dcterms:identifier "SUNDA01-K192".
+
+:terjemahkata214 a :Terjemahan ;
+    rdf:value "dapat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata193 a :KataNaskah ;
+    rdf:value "ngaku"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata215 ;
+    dcterms:identifier "SUNDA01-K193".
+
+:terjemahkata215 a :Terjemahan ;
+    rdf:value "mengaku"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata194 a :KataNaskah ;
+    rdf:value "guna"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata216 ;
+    dcterms:identifier "SUNDA01-K194".
+
+:terjemahkata216 a :Terjemahan ;
+    rdf:value "guna"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata195 a :KataNaskah ;
+    rdf:value "guni"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata217 ;
+    dcterms:identifier "SUNDA01-K195".
+
+:terjemahkata217 a :Terjemahan ;
+    rdf:value "gunanya"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata196 a :KataNaskah ;
+    rdf:value "brata"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata218 ;
+    dcterms:identifier "SUNDA01-K196" .
+
+:terjemahkata218 a :Terjemahan ;
+    rdf:value "pengendalian diri"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata197 a :KataNaskah ;
+    rdf:value "samadi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata219 ;
+    dcterms:identifier "SUNDA01-K197".
+
+:terjemahkata219 a :Terjemahan ;
+    rdf:value "keheningan batin"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata198 a :KataNaskah ;
+    rdf:value "pasa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata220 ;
+    dcterms:identifier "SUNDA01-K198".
+
+:terjemahkata220 a :Terjemahan ;
+    rdf:value "bawah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata199 a :KataNaskah ;
+    rdf:value "prtiwi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata221 ;
+    dcterms:identifier "SUNDA01-K199".
+
+:terjemahkata221 a :Terjemahan ;
+    rdf:value "pertiwi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata200 a :KataNaskah ;
+    rdf:value "akasa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata222 ;
+    dcterms:identifier "SUNDA01-K200".
+
+:terjemahkata222 a :Terjemahan ;
+    rdf:value "angkasa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata201 a :KataNaskah ;
+    rdf:value "batara"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata223 ;
+    dcterms:identifier "SUNDA01-K201".
+
+:terjemahkata223 a :Terjemahan ;
+    rdf:value "dewa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" . 
+
+:kata202 a :KataNaskah ;
+    rdf:value "nusa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata224 ;
+    dcterms:identifier "SUNDA01-K202".
+
+:terjemahkata224 a :Terjemahan ;
+    rdf:value "pulau"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata203 a :KataNaskah ;
+    rdf:value "tiis"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata225 ;
+    dcterms:identifier "SUNDA01-K203".
+
+:terjemahkata225 a :Terjemahan ;
+    rdf:value "dingin"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata204 a :KataNaskah ;
+    rdf:value "batari"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata226 ;
+    dcterms:identifier "SUNDA01-K204".
+
+:terjemahkata226 a :Terjemahan ;
+    rdf:value "dewi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata205 a :KataNaskah ;
+    rdf:value "manusa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata227 ;
+    dcterms:identifier "SUNDA01-K205".
+
+:terjemahkata227 a :Terjemahan ;
+    rdf:value "manusia"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata206 a :KataNaskah ;
+    rdf:value "suka"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata228 ;
+    dcterms:identifier "SUNDA01-K206".
+
+:terjemahkata228 a :Terjemahan ;
+    rdf:value "suka"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .  
+
+:kata207 a :KataNaskah ;
+    rdf:value "duka"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata229 ;
+    dcterms:identifier "SUNDA01-K207".
+
+:terjemahkata229 a :Terjemahan ;
+    rdf:value "duka"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata208 a :KataNaskah ;
+    rdf:value "isor"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata230 ;
+    dcterms:identifier "SUNDA01-K208".
+
+:terjemahkata230 a :Terjemahan ;
+    rdf:value "bawah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata209 a :KataNaskah ;
+    rdf:value "ruhur"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata231 ;
+    dcterms:identifier "SUNDA01-K209".
+
+:terjemahkata231 a :Terjemahan ;
+    rdf:value "atas"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata210 a :KataNaskah ;
+    rdf:value "mati"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata232 ;
+    dcterms:identifier "SUNDA01-K210".
+
+:terjemahkata232 a :Terjemahan ;
+    rdf:value "mati"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata211 a :KataNaskah ;
+    rdf:value "ipas"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata233 ;
+    dcterms:identifier "SUNDA01-K211".
+
+:terjemahkata233 a :Terjemahan ;
+    rdf:value "seimbang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata212 a :KataNaskah ;
+    rdf:value "sira"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata234 ;
+    dcterms:identifier "SUNDA01-K212".  
+
+:terjemahkata234 a :Terjemahan ;
+    rdf:value "dia"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+    
+:kata213 a :KataNaskah ;
+    rdf:value "iwas"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata235 ;
+    dcterms:identifier "SUNDA01-K213".
+
+:terjemahkata235 a :Terjemahan ;
+    rdf:value "lama"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata214 a :KataNaskah ;
+    rdf:value "cat"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata236 ;
+    dcterms:identifier "SUNDA01-K214".
+
+:terjemahkata236 a :Terjemahan ;
+    rdf:value "lalu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata215 a :KataNaskah ;
+    rdf:value "nir"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata237 ;
+    dcterms:identifier "SUNDA01-K215".
+
+:terjemahkata237 a :Terjemahan ;
+    rdf:value "tidak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata216 a :KataNaskah ;
+    rdf:value "pareka"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata238 ;
+    dcterms:identifier "SUNDA01-K216".
+
+:terjemahkata238 a :Terjemahan ; 
+    rdf:value "berbentuk"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata217 a :KataNaskah ;
+    rdf:value "sangsaya"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata239 ;
+    dcterms:identifier "SUNDA01-K217".
+
+:terjemahkata239 a :Terjemahan ;
+    rdf:value "sengsara"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata218 a :KataNaskah ;
+    rdf:value "luput"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata240 ;
+    dcterms:identifier "SUNDA01-K218".
+
+:terjemahkata240 a :Terjemahan ; 
+    rdf:value "terbebas"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata219 a :KataNaskah ;
+    rdf:value "nirmala"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata241 ;
+    dcterms:identifier "SUNDA01-K219".
+
+:terjemahkata241 a :Terjemahan ;  
+    rdf:value "suci"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata220 a :KataNaskah ;
+    rdf:value "hilang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata242 ;
+    dcterms:identifier "SUNDA01-K220".
+
+:terjemahkata242 a :Terjemahan ;
+    rdf:value "hilang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata221 a :KataNaskah ;
+    rdf:value "karana"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata243 ;
+    dcterms:identifier "SUNDA01-K221".
+
+:terjemahkata243 a :Terjemahan ;
+    rdf:value "sebab"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata222 a :KataNaskah ;
+    rdf:value "kamuwahhan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata244 ;
+    dcterms:identifier "SUNDA01-K222".
+
+:terjemahkata244 a :Terjemahan ;
+    rdf:value "perubahan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata223 a :KataNaskah ;   
+    rdf:value "kajajadyan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata245 ;
+    dcterms:identifier "SUNDA01-K223".
+
+:terjemahkata245 a :Terjemahan ;
+    rdf:value "kejadian"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata224 a :KataNaskah ;
+    rdf:value "pada"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata246 ;
+    dcterms:identifier "SUNDA01-K224".
+
+:terjemahkata246 a :Terjemahan ;
+    rdf:value "sama"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata225 a :KataNaskah ;
+    rdf:value "nolasa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata247 ;
+    dcterms:identifier "SUNDA01-K225".
+
+:terjemahkata247 a :Terjemahan ;
+    rdf:value "lenyap"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata226 a :KataNaskah ;
+    rdf:value "manon"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata248 ;
+    dcterms:identifier "SUNDA01-K226".
+
+:terjemahkata248 a :Terjemahan ;
+    rdf:value "melihat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata227 a :KataNaskah ;
+    rdf:value "mingt"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata249 ;
+    dcterms:identifier "SUNDA01-K227".
+
+:terjemahkata249 a :Terjemahan ;
+    rdf:value "pergi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata228 a :KataNaskah ;
+    rdf:value "katuduh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata250 , :terjemahkata251 ;
+    dcterms:identifier "SUNDA01-K228".
+
+:terjemahkata250 a :Terjemahan ;
+    rdf:value "tertebak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:terjemahkata251 a :Terjemahan ;
+    rdf:value "tertunjuk"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata229 a :KataNaskah ;
+    rdf:value "kaiyatnaka"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata252 ;
+    dcterms:identifier "SUNDA01-K229".
+
+:terjemahkata252 a :Terjemahan ;
+    rdf:value "terpahami"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata230 a :KataNaskah ;
+    rdf:value "haywa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata253 ;
+    dcterms:identifier "SUNDA01-K230".
+
+:terjemahkata253 a :Terjemahan ;
+    rdf:value "jangan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata231 a :KataNaskah ;
+    rdf:value "lupa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata254 ;
+    dcterms:identifier "SUNDA01-K231".
+
+:terjemahkata254 a :Terjemahan ;  
+    rdf:value "lupa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata232 a :KataNaskah ;
+    rdf:value "dora"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata255 ;
+    dcterms:identifier "SUNDA01-K232".
+
+:terjemahkata255 a :Terjemahan ;
+    rdf:value "sebab"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata233 a :KataNaskah ;
+    rdf:value "kasikp"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata256 ;
+    dcterms:identifier "SUNDA01-K233".
+
+:terjemahkata256 a :Terjemahan ;
+    rdf:value "bersikap"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata234 a :KataNaskah ;
+    rdf:value "nyanarada"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata257 ;
+    dcterms:identifier "SUNDA01-K234".
+
+:terjemahkata257 a :Terjemahan ;
+    rdf:value "demikian"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata235 a :KataNaskah ;
+    rdf:value "lain"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata258 ;
+    dcterms:identifier "SUNDA01-K235".
+
+:terjemahkata258 a :Terjemahan ;
+    rdf:value "bukan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata236 a :KataNaskah ;
+    rdf:value "pangkat"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata259 ;
+    dcterms:identifier "SUNDA01-K236".
+
+:terjemahkata259 a :Terjemahan ;
+    rdf:value "pengangkatan secara ritual"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata237 a :KataNaskah ;
+    rdf:value "laku"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata260 ;
+    dcterms:identifier "SUNDA01-K237".
+
+:terjemahkata260 a :Terjemahan ;
+    rdf:value "perilaku"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata238 a :KataNaskah ;
+    rdf:value "leupang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata261 ;
+    dcterms:identifier "SUNDA01-K238".
+
+:terjemahkata261 a :Terjemahan ;   
+    rdf:value "pergi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata239 a :KataNaskah ;
+    rdf:value "kajeueur"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata262 ;
+    dcterms:identifier "SUNDA01-K239".
+
+:terjemahkata262 a :Terjemahan ;
+    rdf:value "tampak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata240 a :KataNaskah ;
+    rdf:value "tonggong"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata263 ;
+    dcterms:identifier "SUNDA01-K240".
+
+:terjemahkata263 a :Terjemahan ;
+    rdf:value "punggung"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata241 a :KataNaskah ;
+    rdf:value "datang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata264 ;
+    dcterms:identifier "SUNDA01-K241".
+
+:terjemahkata264 a :Terjemahan ;
+    rdf:value "datang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata242 a :KataNaskah ;
+    rdf:value "beungeut"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata265 ;
+    dcterms:identifier "SUNDA01-K242".
+
+:terjemahkata265 a :Terjemahan ;
+    rdf:value "wajah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata243 a :KataNaskah ;
+    rdf:value "katmu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata266 ;
+    dcterms:identifier "SUNDA01-K243".
+
+:terjemahkata266 a :Terjemahan ;
+    rdf:value "bertemu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata244 a :KataNaskah ;
+    rdf:value "kareupat"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata267 ;
+    dcterms:identifier "SUNDA01-K244".
+
+:terjemahkata267 a :Terjemahan ;
+    rdf:value "berjalan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata245 a :KataNaskah ;
+    rdf:value "lakar"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata268 ;
+    dcterms:identifier "SUNDA01-K245".
+
+:terjemahkata268 a :Terjemahan ;
+    rdf:value "asal"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata246 a :KataNaskah ;
+    rdf:value "ngaraning"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata269 ;
+    dcterms:identifier "SUNDA01-K246".
+
+:terjemahkata269 a :Terjemahan ;
+    rdf:value "artinya"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .   
+
+:kata247 a :KataNaskah ;
+    rdf:value "pata"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata270 ;
+    dcterms:identifier "SUNDA01-K247".
+
+:terjemahkata270 a :Terjemahan ;
+    rdf:value "putus"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" . 
+
+:kata248 a :KataNaskah ;
+    rdf:value "bnr"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata271 ;
+    dcterms:identifier "SUNDA01-K248".
+
+:terjemahkata271 a :Terjemahan ;
+    rdf:value "kebenaran"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata249 a :KataNaskah ;
+    rdf:value "linglang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata272 ;
+    dcterms:identifier "SUNDA01-K249".
+
+:terjemahkata272 a :Terjemahan ;
+    rdf:value "hilang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata250 a :KataNaskah ;
+    rdf:value "laling"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata273 ;
+    dcterms:identifier "SUNDA01-K250".
+
+:terjemahkata273 a :Terjemahan ;   
+    rdf:value "menyimpang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata251 a :KataNaskah ;
+    rdf:value "lingnyp"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata274 ;
+    dcterms:identifier "SUNDA01-K251".
+
+:terjemahkata274 a :Terjemahan ;
+    rdf:value "hening"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata252 a :KataNaskah ;
+    rdf:value "kasurkran"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata275 ;
+    dcterms:identifier "SUNDA01-K252".
+
+:terjemahkata275 a :Terjemahan ;
+    rdf:value "terhalangi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata253 a :KataNaskah ;
+    rdf:value "deneng"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata276 ;
+    dcterms:identifier "SUNDA01-K253".
+
+:terjemahkata276 a :Terjemahan ;
+    rdf:value "oleh"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata254 a :KataNaskah ;
+    rdf:value "sukr"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata277 ;
+    dcterms:identifier "SUNDA01-K254".
+
+:terjemahkata277 a :Terjemahan ;  
+    rdf:value "kesukaran"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata255 a :KataNaskah ;
+    rdf:value "tmahan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata278 ;
+    dcterms:identifier "SUNDA01-K255".
+
+:terjemahkata278 a :Terjemahan ;
+    rdf:value "mengakibatkan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata256 a :KataNaskah ;
+    rdf:value "ingat"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata279 ;
+    dcterms:identifier "SUNDA01-K256".
+
+:terjemahkata279 a :Terjemahan ;
+    rdf:value "sadar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata257 a :KataNaskah ;
+    rdf:value "padm"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata280 ;
+    dcterms:identifier "SUNDA01-K257".
+
+:terjemahkata280 a :Terjemahan ;   
+    rdf:value "pada"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata258 a :KataNaskah ;
+    rdf:value "dipuja"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata281 ;
+    dcterms:identifier "SUNDA01-K258".
+
+:terjemahkata281 a :Terjemahan ;
+    rdf:value "dipuja"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata259 a :KataNaskah ;
+    rdf:value "luput"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata282 ;
+    dcterms:identifier "SUNDA01-K259".
+
+:terjemahkata282 a :Terjemahan ;
+    rdf:value "terbebas"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata260 a :KataNaskah ;
+    rdf:value "liput"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata283 ;
+    dcterms:identifier "SUNDA01-K260".
+
+:terjemahkata283 a :Terjemahan ;
+    rdf:value "terhindar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata261 a :KataNaskah ;
+    rdf:value "warahhakn"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata284 ;
+    dcterms:identifier "SUNDA01-K261".
+
+:terjemahkata284 a :Terjemahan ;
+    rdf:value "dididik"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata262 a :KataNaskah ;
+    rdf:value "maring"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata285 ;
+    dcterms:identifier "SUNDA01-K262".
+    
+:terjemahkata285 a :Terjemahan ;
+    rdf:value "sampai"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata263 a :KataNaskah ;
+    rdf:value "panggara"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata286 ;
+    dcterms:identifier "SUNDA01-K263".
+
+:terjemahkata286 a :Terjemahan ;
+    rdf:value "kerusuhan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+:kata264 a :KataNaskah ;
+    rdf:value "panggara"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata286 ;
+    dcterms:identifier "SUNDA01-K264" .
+
+:terjemahkata286 a :Terjemahan ;
+    rdf:value "sebab (perkara)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata265 a :KataNaskah ;
+    rdf:value "hate"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata287 ;
+    dcterms:identifier "SUNDA01-K265" .
+
+:terjemahkata287 a :Terjemahan ;
+    rdf:value "hati"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata266 a :KataNaskah ;
+    rdf:value "lampah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata288 ;
+    dcterms:identifier "SUNDA01-K266" .
+
+:terjemahkata288 a :Terjemahan ;
+    rdf:value "perilaku"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata267 a :KataNaskah ;
+    rdf:value "awak"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata289 ;
+    dcterms:identifier "SUNDA01-K267" .
+
+:terjemahkata289 a :Terjemahan ;
+    rdf:value "badan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata268 a :KataNaskah ;
+    rdf:value "hirup"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata290 ;
+    dcterms:identifier "SUNDA01-K268" .
+
+:terjemahkata290 a :Terjemahan ;
+    rdf:value "hidup"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata269 a :KataNaskah ;
+    rdf:value "paeh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata291 ;
+    dcterms:identifier "SUNDA01-K269" .
+
+:terjemahkata291 a :Terjemahan ;
+    rdf:value "mati"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+    :kata270 a :KataNaskah ;
+    rdf:value "leumpang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata292 ;
+    dcterms:identifier "SUNDA01-K270" .
+
+:terjemahkata292 a :Terjemahan ;
+    rdf:value "berjalan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata271 a :KataNaskah ;
+    rdf:value "datang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata293 ;
+    dcterms:identifier "SUNDA01-K271" .
+
+:terjemahkata293 a :Terjemahan ;
+    rdf:value "datang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata272 a :KataNaskah ;
+    rdf:value "angin"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata294 ;
+    dcterms:identifier "SUNDA01-K272" .
+
+:terjemahkata294 a :Terjemahan ;
+    rdf:value "angin"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata273 a :KataNaskah ;
+    rdf:value "cai"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata295 ;
+    dcterms:identifier "SUNDA01-K273" .
+
+:terjemahkata295 a :Terjemahan ;
+    rdf:value "air"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata274 a :KataNaskah ;
+    rdf:value "rasa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata296 ;
+    dcterms:identifier "SUNDA01-K274" .
+
+:terjemahkata296 a :Terjemahan ;
+    rdf:value "rasa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata275 a :KataNaskah ;
+    rdf:value "pikir"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata297 ;
+    dcterms:identifier "SUNDA01-K275" .
+
+:terjemahkata297 a :Terjemahan ;
+    rdf:value "pikir"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata276 a :KataNaskah ;
+    rdf:value "ceuk"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata298 ;
+    dcterms:identifier "SUNDA01-K276" .
+
+:terjemahkata298 a :Terjemahan ;
+    rdf:value "ucap"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata277 a :KataNaskah ;
+    rdf:value "ningali"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata299 ;
+    dcterms:identifier "SUNDA01-K277" .
+
+:terjemahkata299 a :Terjemahan ;
+    rdf:value "melihat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata278 a :KataNaskah ;
+    rdf:value "ngadangu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata300 ;
+    dcterms:identifier "SUNDA01-K278" .
+
+:terjemahkata300 a :Terjemahan ;
+    rdf:value "mendengar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata279 a :KataNaskah ;
+    rdf:value "kuring"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata301 ;
+    dcterms:identifier "SUNDA01-K279" .
+
+:terjemahkata301 a :Terjemahan ;
+    rdf:value "aku"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata280 a :KataNaskah ;
+    rdf:value "wanci"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata302 ;
+    dcterms:identifier "SUNDA01-K280" .
+
+:terjemahkata302 a :Terjemahan ;
+    rdf:value "waktu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata281 a :KataNaskah ;
+    rdf:value "peuting"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata303 ;
+    dcterms:identifier "SUNDA01-K281" .
+
+:terjemahkata303 a :Terjemahan ;
+    rdf:value "malam"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata282 a :KataNaskah ;
+    rdf:value "beurang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata304 ;
+    dcterms:identifier "SUNDA01-K282" .
+
+:terjemahkata304 a :Terjemahan ;
+    rdf:value "siang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata283 a :KataNaskah ;
+    rdf:value "isuk"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata305 ;
+    dcterms:identifier "SUNDA01-K283" .
+
+:terjemahkata305 a :Terjemahan ;
+    rdf:value "pagi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata284 a :KataNaskah ;
+    rdf:value "getih"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata306 ;
+    dcterms:identifier "SUNDA01-K284" .
+
+:terjemahkata306 a :Terjemahan ;
+    rdf:value "darah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata285 a :KataNaskah ;
+    rdf:value "tulang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata307 ;
+    dcterms:identifier "SUNDA01-K285" .
+
+:terjemahkata307 a :Terjemahan ;
+    rdf:value "tulang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata286 a :KataNaskah ;
+    rdf:value "seuri"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata308 ;
+    dcterms:identifier "SUNDA01-K286" .
+
+:terjemahkata308 a :Terjemahan ;
+    rdf:value "tertawa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata287 a :KataNaskah ;
+    rdf:value "ceurik"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata309 ;
+    dcterms:identifier "SUNDA01-K287" .
+
+:terjemahkata309 a :Terjemahan ;
+    rdf:value "menangis"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata288 a :KataNaskah ;
+    rdf:value "nulis"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata310 ;
+    dcterms:identifier "SUNDA01-K288" .
+
+:terjemahkata310 a :Terjemahan ;
+    rdf:value "menulis"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata289 a :KataNaskah ;
+    rdf:value "maca"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata311 ;
+    dcterms:identifier "SUNDA01-K289" .
+
+:terjemahkata311 a :Terjemahan ;
+    rdf:value "membaca"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata290 a :KataNaskah ;
+    rdf:value "alus"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata312 ;
+    dcterms:identifier "SUNDA01-K290" .
+
+:terjemahkata312 a :Terjemahan ;
+    rdf:value "bagus"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata291 a :KataNaskah ;
+    rdf:value "goreng"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata313 ;
+    dcterms:identifier "SUNDA01-K291" .
+
+:terjemahkata313 a :Terjemahan ;
+    rdf:value "jelek"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata292 a :KataNaskah ;
+    rdf:value "bener"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata314 ;
+    dcterms:identifier "SUNDA01-K292" .
+
+:terjemahkata314 a :Terjemahan ;
+    rdf:value "benar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata293 a :KataNaskah ;
+    rdf:value "salah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata315 ;
+    dcterms:identifier "SUNDA01-K293" .
+
+:terjemahkata315 a :Terjemahan ;
+    rdf:value "salah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata294 a :KataNaskah ;
+    rdf:value "luhur"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata316 ;
+    dcterms:identifier "SUNDA01-K294" .
+
+:terjemahkata316 a :Terjemahan ;
+    rdf:value "atas"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata295 a :KataNaskah ;
+    rdf:value "handap"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata317 ;
+    dcterms:identifier "SUNDA01-K295" .
+
+:terjemahkata317 a :Terjemahan ;
+    rdf:value "bawah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata296 a :KataNaskah ;
+    rdf:value "kenca"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata318 ;
+    dcterms:identifier "SUNDA01-K296" .
+
+:terjemahkata318 a :Terjemahan ;
+    rdf:value "kiri"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata297 a :KataNaskah ;
+    rdf:value "katuhu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata319 ;
+    dcterms:identifier "SUNDA01-K297" .
+
+:terjemahkata319 a :Terjemahan ;
+    rdf:value "kanan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata298 a :KataNaskah ;
+    rdf:value "gunung"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata320 ;
+    dcterms:identifier "SUNDA01-K298" .
+
+:terjemahkata320 a :Terjemahan ;
+    rdf:value "gunung"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata299 a :KataNaskah ;
+    rdf:value "leuweung"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata321 ;
+    dcterms:identifier "SUNDA01-K299" .
+
+:terjemahkata321 a :Terjemahan ;
+    rdf:value "hutan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata263 a :KataNaskah ;
+    rdf:value "apan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata263 ;
+    dcterms:identifier "SUNDA01-K263" .
+
+:terjemahkata263 a :Terjemahan ;
+    rdf:value "karena"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata264 a :KataNaskah ;
+    rdf:value "panggara"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata286 ;
+    dcterms:identifier "SUNDA01-K264" .
+
+:terjemahkata286 a :Terjemahan ;
+    rdf:value "sebab (perkara)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata265 a :KataNaskah ;
+    rdf:value "hate"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata287 ;
+    dcterms:identifier "SUNDA01-K265" .
+
+:terjemahkata287 a :Terjemahan ;
+    rdf:value "hati"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata266 a :KataNaskah ;
+    rdf:value "lampah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata288 ;
+    dcterms:identifier "SUNDA01-K266" .
+
+:terjemahkata288 a :Terjemahan ;
+    rdf:value "perilaku"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata267 a :KataNaskah ;
+    rdf:value "awak"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata289 ;
+    dcterms:identifier "SUNDA01-K267" .
+
+:terjemahkata289 a :Terjemahan ;
+    rdf:value "badan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata268 a :KataNaskah ;
+    rdf:value "hirup"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata290 ;
+    dcterms:identifier "SUNDA01-K268" .
+
+:terjemahkata290 a :Terjemahan ;
+    rdf:value "hidup"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata269 a :KataNaskah ;
+    rdf:value "paeh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata291 ;
+    dcterms:identifier "SUNDA01-K269" .
+
+:terjemahkata291 a :Terjemahan ;
+    rdf:value "mati"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata270 a :KataNaskah ;
+    rdf:value "leumpang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata292 ;
+    dcterms:identifier "SUNDA01-K270" .
+
+:terjemahkata292 a :Terjemahan ;
+    rdf:value "berjalan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata271 a :KataNaskah ;
+    rdf:value "datang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata293 ;
+    dcterms:identifier "SUNDA01-K271" .
+
+:terjemahkata293 a :Terjemahan ;
+    rdf:value "datang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata272 a :KataNaskah ;
+    rdf:value "angin"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata294 ;
+    dcterms:identifier "SUNDA01-K272" .
+
+:terjemahkata294 a :Terjemahan ;
+    rdf:value "angin"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata273 a :KataNaskah ;
+    rdf:value "cai"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata295 ;
+    dcterms:identifier "SUNDA01-K273" .
+
+:terjemahkata295 a :Terjemahan ;
+    rdf:value "air"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata274 a :KataNaskah ;
+    rdf:value "rasa"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata296 ;
+    dcterms:identifier "SUNDA01-K274" .
+
+:terjemahkata296 a :Terjemahan ;
+    rdf:value "rasa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata275 a :KataNaskah ;
+    rdf:value "pikir"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata297 ;
+    dcterms:identifier "SUNDA01-K275" .
+
+:terjemahkata297 a :Terjemahan ;
+    rdf:value "pikir"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata276 a :KataNaskah ;
+    rdf:value "ceuk"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata298 ;
+    dcterms:identifier "SUNDA01-K276" .
+
+:terjemahkata298 a :Terjemahan ;
+    rdf:value "ucap"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata277 a :KataNaskah ;
+    rdf:value "ningali"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata299 ;
+    dcterms:identifier "SUNDA01-K277" .
+
+:terjemahkata299 a :Terjemahan ;
+    rdf:value "melihat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata278 a :KataNaskah ;
+    rdf:value "ngadangu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata300 ;
+    dcterms:identifier "SUNDA01-K278" .
+
+:terjemahkata300 a :Terjemahan ;
+    rdf:value "mendengar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata279 a :KataNaskah ;
+    rdf:value "kuring"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata301 ;
+    dcterms:identifier "SUNDA01-K279" .
+
+:terjemahkata301 a :Terjemahan ;
+    rdf:value "aku"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata280 a :KataNaskah ;
+    rdf:value "wanci"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata302 ;
+    dcterms:identifier "SUNDA01-K280" .
+
+:terjemahkata302 a :Terjemahan ;
+    rdf:value "waktu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata281 a :KataNaskah ;
+    rdf:value "peuting"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata303 ;
+    dcterms:identifier "SUNDA01-K281" .
+
+:terjemahkata303 a :Terjemahan ;
+    rdf:value "malam"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata282 a :KataNaskah ;
+    rdf:value "beurang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata304 ;
+    dcterms:identifier "SUNDA01-K282" .
+
+:terjemahkata304 a :Terjemahan ;
+    rdf:value "siang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata283 a :KataNaskah ;
+    rdf:value "isuk"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata305 ;
+    dcterms:identifier "SUNDA01-K283" .
+
+:terjemahkata305 a :Terjemahan ;
+    rdf:value "pagi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata284 a :KataNaskah ;
+    rdf:value "getih"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata306 ;
+    dcterms:identifier "SUNDA01-K284" .
+
+:terjemahkata306 a :Terjemahan ;
+    rdf:value "darah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata285 a :KataNaskah ;
+    rdf:value "tulang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata307 ;
+    dcterms:identifier "SUNDA01-K285" .
+
+:terjemahkata307 a :Terjemahan ;
+    rdf:value "tulang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata286 a :KataNaskah ;
+    rdf:value "seuri"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata308 ;
+    dcterms:identifier "SUNDA01-K286" .
+
+:terjemahkata308 a :Terjemahan ;
+    rdf:value "tertawa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata287 a :KataNaskah ;
+    rdf:value "ceurik"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata309 ;
+    dcterms:identifier "SUNDA01-K287" .
+
+:terjemahkata309 a :Terjemahan ;
+    rdf:value "menangis"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata288 a :KataNaskah ;
+    rdf:value "nulis"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata310 ;
+    dcterms:identifier "SUNDA01-K288" .
+
+:terjemahkata310 a :Terjemahan ;
+    rdf:value "menulis"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata289 a :KataNaskah ;
+    rdf:value "maca"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata311 ;
+    dcterms:identifier "SUNDA01-K289" .
+
+:terjemahkata311 a :Terjemahan ;
+    rdf:value "membaca"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata290 a :KataNaskah ;
+    rdf:value "alus"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata312 ;
+    dcterms:identifier "SUNDA01-K290" .
+
+:terjemahkata312 a :Terjemahan ;
+    rdf:value "bagus"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata291 a :KataNaskah ;
+    rdf:value "goreng"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata313 ;
+    dcterms:identifier "SUNDA01-K291" .
+
+:terjemahkata313 a :Terjemahan ;
+    rdf:value "jelek"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata292 a :KataNaskah ;
+    rdf:value "bener"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata314 ;
+    dcterms:identifier "SUNDA01-K292" .
+
+:terjemahkata314 a :Terjemahan ;
+    rdf:value "benar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata293 a :KataNaskah ;
+    rdf:value "salah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata315 ;
+    dcterms:identifier "SUNDA01-K293" .
+
+:terjemahkata315 a :Terjemahan ;
+    rdf:value "salah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata294 a :KataNaskah ;
+    rdf:value "luhur"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata316 ;
+    dcterms:identifier "SUNDA01-K294" .
+
+:terjemahkata316 a :Terjemahan ;
+    rdf:value "atas"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata295 a :KataNaskah ;
+    rdf:value "handap"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata317 ;
+    dcterms:identifier "SUNDA01-K295" .
+
+:terjemahkata317 a :Terjemahan ;
+    rdf:value "bawah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata296 a :KataNaskah ;
+    rdf:value "kenca"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata318 ;
+    dcterms:identifier "SUNDA01-K296" .
+
+:terjemahkata318 a :Terjemahan ;
+    rdf:value "kiri"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata297 a :KataNaskah ;
+    rdf:value "katuhu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata319 ;
+    dcterms:identifier "SUNDA01-K297" .
+
+:terjemahkata319 a :Terjemahan ;
+    rdf:value "kanan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata298 a :KataNaskah ;
+    rdf:value "gunung"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata320 ;
+    dcterms:identifier "SUNDA01-K298" .
+
+:terjemahkata320 a :Terjemahan ;
+    rdf:value "gunung"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata299 a :KataNaskah ;
+    rdf:value "leuweung"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata321 ;
+    dcterms:identifier "SUNDA01-K299" .
+
+:terjemahkata321 a :Terjemahan ;
+    rdf:value "hutan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata300 a :KataNaskah ;
+    rdf:value "sawah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata322 ;
+    dcterms:identifier "SUNDA01-K300" .
+
+:terjemahkata322 a :Terjemahan ;
+    rdf:value "sawah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata301 a :KataNaskah ;
+    rdf:value "gede"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata323 ;
+    dcterms:identifier "SUNDA01-K301" .
+
+:terjemahkata323 a :Terjemahan ;
+    rdf:value "besar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata302 a :KataNaskah ;
+    rdf:value "leutik"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata324 ;
+    dcterms:identifier "SUNDA01-K302" .
+
+:terjemahkata324 a :Terjemahan ;
+    rdf:value "kecil"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata303 a :KataNaskah ;
+    rdf:value "hayang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata325 ;
+    dcterms:identifier "SUNDA01-K303" .
+
+:terjemahkata325 a :Terjemahan ;
+    rdf:value "ingin"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata304 a :KataNaskah ;
+    rdf:value "embung"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata326 ;
+    dcterms:identifier "SUNDA01-K304" .
+
+:terjemahkata326 a :Terjemahan ;
+    rdf:value "tidak mau"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata305 a :KataNaskah ;
+    rdf:value "siga"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata327 ;
+    dcterms:identifier "SUNDA01-K305" .
+
+:terjemahkata327 a :Terjemahan ;
+    rdf:value "seperti"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata306 a :KataNaskah ;
+    rdf:value "maneh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata328 ;
+    dcterms:identifier "SUNDA01-K306" .
+
+:terjemahkata328 a :Terjemahan ;
+    rdf:value "kamu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata307 a :KataNaskah ;
+    rdf:value "anjeun"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata329 ;
+    dcterms:identifier "SUNDA01-K307" .
+
+:terjemahkata329 a :Terjemahan ;
+    rdf:value "anda"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata308 a :KataNaskah ;
+    rdf:value "sarua"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata330 ;
+    dcterms:identifier "SUNDA01-K308" .
+
+:terjemahkata330 a :Terjemahan ;
+    rdf:value "sama"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata309 a :KataNaskah ;
+    rdf:value "beda"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata331 ;
+    dcterms:identifier "SUNDA01-K309" .
+
+:terjemahkata331 a :Terjemahan ;
+    rdf:value "beda"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata310 a :KataNaskah ;
+    rdf:value "cicing"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata332 ;
+    dcterms:identifier "SUNDA01-K310" .
+
+:terjemahkata332 a :Terjemahan ;
+    rdf:value "diam"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata311 a :KataNaskah ;
+    rdf:value "nyarita"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata333 ;
+    dcterms:identifier "SUNDA01-K311" .
+
+:terjemahkata333 a :Terjemahan ;
+    rdf:value "berbicara"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata312 a :KataNaskah ;
+    rdf:value "poho"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata334 ;
+    dcterms:identifier "SUNDA01-K312" .
+
+:terjemahkata334 a :Terjemahan ;
+    rdf:value "lupa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata313 a :KataNaskah ;
+    rdf:value "inget"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata335 ;
+    dcterms:identifier "SUNDA01-K313" .
+
+:terjemahkata335 a :Terjemahan ;
+    rdf:value "ingat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata314 a :KataNaskah ;
+    rdf:value "imah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata336 ;
+    dcterms:identifier "SUNDA01-K314" .
+
+:terjemahkata336 a :Terjemahan ;
+    rdf:value "rumah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata315 a :KataNaskah ;
+    rdf:value "sakola"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata337 ;
+    dcterms:identifier "SUNDA01-K315" .
+
+:terjemahkata337 a :Terjemahan ;
+    rdf:value "sekolah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata316 a :KataNaskah ;
+    rdf:value "budak"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata338 ;
+    dcterms:identifier "SUNDA01-K316" .
+
+:terjemahkata338 a :Terjemahan ;
+    rdf:value "anak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata317 a :KataNaskah ;
+    rdf:value "kolot"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata339 ;
+    dcterms:identifier "SUNDA01-K317" .
+
+:terjemahkata339 a :Terjemahan ;
+    rdf:value "orang tua"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata318 a :KataNaskah ;
+    rdf:value "panon"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata340 ;
+    dcterms:identifier "SUNDA01-K318" .
+
+:terjemahkata340 a :Terjemahan ;
+    rdf:value "mata"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata319 a :KataNaskah ;
+    rdf:value "irung"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata341 ;
+    dcterms:identifier "SUNDA01-K319" .
+
+:terjemahkata341 a :Terjemahan ;
+    rdf:value "hidung"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata320 a :KataNaskah ;
+    rdf:value "sirah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata342 ;
+    dcterms:identifier "SUNDA01-K320" .
+
+:terjemahkata342 a :Terjemahan ;
+    rdf:value "kepala"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+    
+:kata321 a :KataNaskah ;
+    rdf:value "ceuli"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata343 ;
+    dcterms:identifier "SUNDA01-K321" .
+
+:terjemahkata343 a :Terjemahan ;
+    rdf:value "telinga"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata322 a :KataNaskah ;
+    rdf:value "biwir"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata344 ;
+    dcterms:identifier "SUNDA01-K322" .
+
+:terjemahkata344 a :Terjemahan ;
+    rdf:value "bibir"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata323 a :KataNaskah ;
+    rdf:value "leungeun"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata345 ;
+    dcterms:identifier "SUNDA01-K323" .
+
+:terjemahkata345 a :Terjemahan ;
+    rdf:value "tangan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata324 a :KataNaskah ;
+    rdf:value "suku"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata346 ;
+    dcterms:identifier "SUNDA01-K324" .
+
+:terjemahkata346 a :Terjemahan ;
+    rdf:value "kaki"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata325 a :KataNaskah ;
+    rdf:value "beuteung"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata347 ;
+    dcterms:identifier "SUNDA01-K325" .
+
+:terjemahkata347 a :Terjemahan ;
+    rdf:value "perut"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata326 a :KataNaskah ;
+    rdf:value "tonggong"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata348 ;
+    dcterms:identifier "SUNDA01-K326" .
+
+:terjemahkata348 a :Terjemahan ;
+    rdf:value "punggung"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata327 a :KataNaskah ;
+    rdf:value "bulao"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata349 ;
+    dcterms:identifier "SUNDA01-K327" .
+
+:terjemahkata349 a :Terjemahan ;
+    rdf:value "biru"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata328 a :KataNaskah ;
+    rdf:value "beureum"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata350 ;
+    dcterms:identifier "SUNDA01-K328" .
+
+:terjemahkata350 a :Terjemahan ;
+    rdf:value "merah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata329 a :KataNaskah ;
+    rdf:value "koneng"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata351 ;
+    dcterms:identifier "SUNDA01-K329" .
+
+:terjemahkata351 a :Terjemahan ;
+    rdf:value "kuning"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata330 a :KataNaskah ;
+    rdf:value "hejo"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata352 ;
+    dcterms:identifier "SUNDA01-K330" .
+
+:terjemahkata352 a :Terjemahan ;
+    rdf:value "hijau"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata331 a :KataNaskah ;
+    rdf:value "bodas"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata353 ;
+    dcterms:identifier "SUNDA01-K331" .
+
+:terjemahkata353 a :Terjemahan ;
+    rdf:value "putih"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata332 a :KataNaskah ;
+    rdf:value "hideung"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata354 ;
+    dcterms:identifier "SUNDA01-K332" .
+
+:terjemahkata354 a :Terjemahan ;
+    rdf:value "hitam"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata333 a :KataNaskah ;
+    rdf:value "hujan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata355 ;
+    dcterms:identifier "SUNDA01-K333" .
+
+:terjemahkata355 a :Terjemahan ;
+    rdf:value "hujan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata334 a :KataNaskah ;
+    rdf:value "panonpoe"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata356 ;
+    dcterms:identifier "SUNDA01-K334" .
+
+:terjemahkata356 a :Terjemahan ;
+    rdf:value "matahari"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata335 a :KataNaskah ;
+    rdf:value "bentang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata357 ;
+    dcterms:identifier "SUNDA01-K335" .
+
+:terjemahkata357 a :Terjemahan ;
+    rdf:value "bintang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata336 a :KataNaskah ;
+    rdf:value "bulan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata358 ;
+    dcterms:identifier "SUNDA01-K336" .
+
+:terjemahkata358 a :Terjemahan ;
+    rdf:value "bulan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata337 a :KataNaskah ;
+    rdf:value "dunya"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata359 ;
+    dcterms:identifier "SUNDA01-K337" .
+
+:terjemahkata359 a :Terjemahan ;
+    rdf:value "dunia"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata338 a :KataNaskah ;
+    rdf:value "poek"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata360 ;
+    dcterms:identifier "SUNDA01-K338" .
+
+:terjemahkata360 a :Terjemahan ;
+    rdf:value "gelap"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata339 a :KataNaskah ;
+    rdf:value "caang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata361 ;
+    dcterms:identifier "SUNDA01-K339" .
+
+:terjemahkata361 a :Terjemahan ;
+    rdf:value "terang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata340 a :KataNaskah ;
+    rdf:value "amis"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata362 ;
+    dcterms:identifier "SUNDA01-K340" .
+
+:terjemahkata362 a :Terjemahan ;
+    rdf:value "manis"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata341 a :KataNaskah ;
+    rdf:value "pait"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata363 ;
+    dcterms:identifier "SUNDA01-K341" .
+
+:terjemahkata363 a :Terjemahan ;
+    rdf:value "pahit"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata342 a :KataNaskah ;
+    rdf:value "haseum"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata364 ;
+    dcterms:identifier "SUNDA01-K342" .
+
+:terjemahkata364 a :Terjemahan ;
+    rdf:value "asam"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata343 a :KataNaskah ;
+    rdf:value "asin"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata365 ;
+    dcterms:identifier "SUNDA01-K343" .
+
+:terjemahkata365 a :Terjemahan ;
+    rdf:value "asin"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata344 a :KataNaskah ;
+    rdf:value "kembang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata366 ;
+    dcterms:identifier "SUNDA01-K344" .
+
+:terjemahkata366 a :Terjemahan ;
+    rdf:value "bunga"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata345 a :KataNaskah ;
+    rdf:value "batu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata367 ;
+    dcterms:identifier "SUNDA01-K345" .
+
+
+
+:terjemahkata367 a :Terjemahan ;
+    rdf:value "batu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata346 a :KataNaskah ;
+    rdf:value "taneuh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata368 ;
+    dcterms:identifier "SUNDA01-K346" .
+
+:terjemahkata368 a :Terjemahan ;
+    rdf:value "tanah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata347 a :KataNaskah ;
+    rdf:value "beusi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata369 ;
+    dcterms:identifier "SUNDA01-K347" .
+
+:terjemahkata369 a :Terjemahan ;
+    rdf:value "besi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata348 a :KataNaskah ;
+    rdf:value "kai"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata370 ;
+    dcterms:identifier "SUNDA01-K348" .
+
+:terjemahkata370 a :Terjemahan ;
+    rdf:value "kayu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata349 a :KataNaskah ;
+    rdf:value "daun"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata371 ;
+    dcterms:identifier "SUNDA01-K349" .
+
+:terjemahkata371 a :Terjemahan ;
+    rdf:value "daun"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata350 a :KataNaskah ;
+    rdf:value "buah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata372 ;
+    dcterms:identifier "SUNDA01-K350" .
+
+:terjemahkata372 a :Terjemahan ;
+    rdf:value "buah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata351 a :KataNaskah ;
+    rdf:value "cangkaleng"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata373 ;
+    dcterms:identifier "SUNDA01-K351" .
+
+:terjemahkata373 a :Terjemahan ;
+    rdf:value "biji (buah)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata352 a :KataNaskah ;
+    rdf:value "akar"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata374 ;
+    dcterms:identifier "SUNDA01-K352" .
+
+:terjemahkata374 a :Terjemahan ;
+    rdf:value "akar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata353 a :KataNaskah ;
+    rdf:value "tangkal"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata375 ;
+    dcterms:identifier "SUNDA01-K353" .
+
+:terjemahkata375 a :Terjemahan ;
+    rdf:value "pohon"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata354 a :KataNaskah ;
+    rdf:value "laut"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata376 ;
+    dcterms:identifier "SUNDA01-K354" .
+
+:terjemahkata376 a :Terjemahan ;
+    rdf:value "laut"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata355 a :KataNaskah ;
+    rdf:value "walungan"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata377 ;
+    dcterms:identifier "SUNDA01-K355" .
+
+:terjemahkata377 a :Terjemahan ;
+    rdf:value "sungai"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata356 a :KataNaskah ;
+    rdf:value "situ"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata378 ;
+    dcterms:identifier "SUNDA01-K356" .
+
+:terjemahkata378 a :Terjemahan ;
+    rdf:value "danau"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata357 a :KataNaskah ;
+    rdf:value "pasir"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata379 ;
+    dcterms:identifier "SUNDA01-K357" .
+
+:terjemahkata379 a :Terjemahan ;
+    rdf:value "bukit"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata358 a :KataNaskah ;
+    rdf:value "jero"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata380 ;
+    dcterms:identifier "SUNDA01-K358" .
+
+:terjemahkata380 a :Terjemahan ;
+    rdf:value "dalam"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata359 a :KataNaskah ;
+    rdf:value "luar"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata381 ;
+    dcterms:identifier "SUNDA01-K359" .
+
+:terjemahkata381 a :Terjemahan ;
+    rdf:value "luar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata360 a :KataNaskah ;
+    rdf:value "anyar"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata382 ;
+    dcterms:identifier "SUNDA01-K360" .
+
+:terjemahkata382 a :Terjemahan ;
+    rdf:value "baru"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata361 a :KataNaskah ;
+    rdf:value "heubeul"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata383 ;
+    dcterms:identifier "SUNDA01-K361" .
+
+:terjemahkata383 a :Terjemahan ;
+    rdf:value "lama (barang)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata362 a :KataNaskah ;
+    rdf:value "ngora"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata384 ;
+    dcterms:identifier "SUNDA01-K362" .
+
+:terjemahkata384 a :Terjemahan ;
+    rdf:value "muda"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata363 a :KataNaskah ;
+    rdf:value "beurat"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata385 ;
+    dcterms:identifier "SUNDA01-K363" .
+
+:terjemahkata385 a :Terjemahan ;
+    rdf:value "berat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata364 a :KataNaskah ;
+    rdf:value "hampang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata386 ;
+    dcterms:identifier "SUNDA01-K364" .
+
+:terjemahkata386 a :Terjemahan ;
+    rdf:value "ringan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata365 a :KataNaskah ;
+    rdf:value "haneut"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata387 ;
+    dcterms:identifier "SUNDA01-K365" .
+
+:terjemahkata387 a :Terjemahan ;
+    rdf:value "hangat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata366 a :KataNaskah ;
+    rdf:value "tiis"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata388 ;
+    dcterms:identifier "SUNDA01-K366" .
+
+:terjemahkata388 a :Terjemahan ;
+    rdf:value "dingin"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata367 a :KataNaskah ;
+    rdf:value "geulis"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata389 ;
+    dcterms:identifier "SUNDA01-K367" .
+
+:terjemahkata389 a :Terjemahan ;
+    rdf:value "cantik"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata368 a :KataNaskah ;
+    rdf:value "kasep"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata390 ;
+    dcterms:identifier "SUNDA01-K368" .
+
+:terjemahkata390 a :Terjemahan ;
+    rdf:value "tampan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata369 a :KataNaskah ;
+    rdf:value "pinter"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata391 ;
+    dcterms:identifier "SUNDA01-K369" .
+
+:terjemahkata391 a :Terjemahan ;
+    rdf:value "pintar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata370 a :KataNaskah ;
+    rdf:value "bodo"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata392 ;
+    dcterms:identifier "SUNDA01-K370" .
+
+:terjemahkata392 a :Terjemahan ;
+    rdf:value "bodoh"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata371 a :KataNaskah ;
+    rdf:value "cape"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata393 ;
+    dcterms:identifier "SUNDA01-K371" .
+
+:terjemahkata393 a :Terjemahan ;
+    rdf:value "lelah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata372 a :KataNaskah ;
+    rdf:value "seger"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata394 ;
+    dcterms:identifier "SUNDA01-K372" .
+
+:terjemahkata394 a :Terjemahan ;
+    rdf:value "segar"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata373 a :KataNaskah ;
+    rdf:value "sare"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata395 ;
+    dcterms:identifier "SUNDA01-K373" .
+
+:terjemahkata395 a :Terjemahan ;
+    rdf:value "tidur"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata374 a :KataNaskah ;
+    rdf:value "hudang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata396 ;
+    dcterms:identifier "SUNDA01-K374" .
+
+:terjemahkata396 a :Terjemahan ;
+    rdf:value "bangun"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata375 a :KataNaskah ;
+    rdf:value "tuang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata397 ;
+    dcterms:identifier "SUNDA01-K375" .
+
+:terjemahkata397 a :Terjemahan ;
+    rdf:value "makan (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata376 a :KataNaskah ;
+    rdf:value "leueut"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata398 ;
+    dcterms:identifier "SUNDA01-K376" .
+
+:terjemahkata398 a :Terjemahan ;
+    rdf:value "minum (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata377 a :KataNaskah ;
+    rdf:value "damang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata399 ;
+    dcterms:identifier "SUNDA01-K377" .
+
+:terjemahkata399 a :Terjemahan ;
+    rdf:value "sehat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata378 a :KataNaskah ;
+    rdf:value "gering"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata400 ;
+    dcterms:identifier "SUNDA01-K378" .
+
+:terjemahkata400 a :Terjemahan ;
+    rdf:value "sakit (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata379 a :KataNaskah ;
+    rdf:value "artos"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata401 ;
+    dcterms:identifier "SUNDA01-K379" .
+
+:terjemahkata401 a :Terjemahan ;
+    rdf:value "uang (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata380 a :KataNaskah ;
+    rdf:value "acuk"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata402 ;
+    dcterms:identifier "SUNDA01-K380" .
+
+:terjemahkata402 a :Terjemahan ;
+    rdf:value "baju (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata381 a :KataNaskah ;
+    rdf:value "sapertos"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata403 ;
+    dcterms:identifier "SUNDA01-K381" .
+
+:terjemahkata403 a :Terjemahan ;
+    rdf:value "seperti (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata382 a :KataNaskah ;
+    rdf:value "upami"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata404 ;
+    dcterms:identifier "SUNDA01-K382" .
+
+:terjemahkata404 a :Terjemahan ;
+    rdf:value "jika"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata383 a :KataNaskah ;
+    rdf:value "teras"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata405 ;
+    dcterms:identifier "SUNDA01-K383" .
+
+:terjemahkata405 a :Terjemahan ;
+    rdf:value "lalu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata384 a :KataNaskah ;
+    rdf:value "naha"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata406 ;
+    dcterms:identifier "SUNDA01-K384" .
+
+:terjemahkata406 a :Terjemahan ;
+    rdf:value "kenapa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata385 a :KataNaskah ;
+    rdf:value "kumaha"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata407 ;
+    dcterms:identifier "SUNDA01-K385" .
+
+:terjemahkata407 a :Terjemahan ;
+    rdf:value "bagaimana"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata386 a :KataNaskah ;
+    rdf:value "iraha"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata408 ;
+    dcterms:identifier "SUNDA01-K386" .
+
+:terjemahkata408 a :Terjemahan ;
+    rdf:value "kapan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata387 a :KataNaskah ;
+    rdf:value "dimana"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata409 ;
+    dcterms:identifier "SUNDA01-K387" .
+
+:terjemahkata409 a :Terjemahan ;
+    rdf:value "dimana"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata388 a :KataNaskah ;
+    rdf:value "sabaraha"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata410 ;
+    dcterms:identifier "SUNDA01-K388" .
+
+:terjemahkata410 a :Terjemahan ;
+    rdf:value "berapa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata389 a :KataNaskah ;
+    rdf:value "ayeuna"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata411 ;
+    dcterms:identifier "SUNDA01-K389" .
+
+:terjemahkata411 a :Terjemahan ;
+    rdf:value "sekarang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata390 a :KataNaskah ;
+    rdf:value "engke"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata412 ;
+    dcterms:identifier "SUNDA01-K390" .
+
+:terjemahkata412 a :Terjemahan ;
+    rdf:value "nanti"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata391 a :KataNaskah ;
+    rdf:value "kamari"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata413 ;
+    dcterms:identifier "SUNDA01-K391" .
+
+:terjemahkata413 a :Terjemahan ;
+    rdf:value "kemarin"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata392 a :KataNaskah ;
+    rdf:value "pageto"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata414 ;
+    dcterms:identifier "SUNDA01-K392" .
+
+:terjemahkata414 a :Terjemahan ;
+    rdf:value "lusa"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata393 a :KataNaskah ;
+    rdf:value "jiga"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata415 ;
+    dcterms:identifier "SUNDA01-K393" .
+
+:terjemahkata415 a :Terjemahan ;
+    rdf:value "seperti"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata394 a :KataNaskah ;
+    rdf:value "kudu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata416 ;
+    dcterms:identifier "SUNDA01-K394" .
+
+:terjemahkata416 a :Terjemahan ;
+    rdf:value "harus"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata395 a :KataNaskah ;
+    rdf:value "meunang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata417 ;
+    dcterms:identifier "SUNDA01-K395" .
+
+:terjemahkata417 a :Terjemahan ;
+    rdf:value "boleh/dapat"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata396 a :KataNaskah ;
+    rdf:value "tebih"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata418 ;
+    dcterms:identifier "SUNDA01-K396" .
+
+:terjemahkata418 a :Terjemahan ;
+    rdf:value "jauh (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata397 a :KataNaskah ;
+    rdf:value "caket"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata419 ;
+    dcterms:identifier "SUNDA01-K397" .
+
+:terjemahkata419 a :Terjemahan ;
+    rdf:value "dekat (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata398 a :KataNaskah ;
+    rdf:value "leres"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata420 ;
+    dcterms:identifier "SUNDA01-K398" .
+
+:terjemahkata420 a :Terjemahan ;
+    rdf:value "benar (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata399 a :KataNaskah ;
+    rdf:value "mahal"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata421 ;
+    dcterms:identifier "SUNDA01-K399" .
+
+:terjemahkata421 a :Terjemahan ;
+    rdf:value "mahal"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata400 a :KataNaskah ;
+    rdf:value "mirah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata422 ;
+    dcterms:identifier "SUNDA01-K400" .
+
+:terjemahkata422 a :Terjemahan ;
+    rdf:value "murah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata401 a :KataNaskah ;
+    rdf:value "hese"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata423 ;
+    dcterms:identifier "SUNDA01-K401" .
+
+:terjemahkata423 a :Terjemahan ;
+    rdf:value "susah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata402 a :KataNaskah ;
+    rdf:value "gampil"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata424 ;
+    dcterms:identifier "SUNDA01-K402" .
+
+:terjemahkata424 a :Terjemahan ;
+    rdf:value "mudah (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata403 a :KataNaskah ;
+    rdf:value "sae"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata425 ;
+    dcterms:identifier "SUNDA01-K403" .
+
+:terjemahkata425 a :Terjemahan ;
+    rdf:value "bagus (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata404 a :KataNaskah ;
+    rdf:value "awon"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata426 ;
+    dcterms:identifier "SUNDA01-K404" .
+
+:terjemahkata426 a :Terjemahan ;
+    rdf:value "jelek (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata405 a :KataNaskah ;
+    rdf:value "duka"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata427 ;
+    dcterms:identifier "SUNDA01-K405" .
+
+:terjemahkata427 a :Terjemahan ;
+    rdf:value "tidak tahu/entah"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata406 a :KataNaskah ;
+    rdf:value "lanceuk"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata428 ;
+    dcterms:identifier "SUNDA01-K406" .
+
+:terjemahkata428 a :Terjemahan ;
+    rdf:value "kakak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata407 a :KataNaskah ;
+    rdf:value "adi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata429 ;
+    dcterms:identifier "SUNDA01-K407" .
+
+:terjemahkata429 a :Terjemahan ;
+    rdf:value "adik"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata408 a :KataNaskah ;
+    rdf:value "aki"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata430 ;
+    dcterms:identifier "SUNDA01-K408" .
+
+:terjemahkata430 a :Terjemahan ;
+    rdf:value "kakek"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata409 a :KataNaskah ;
+    rdf:value "nini"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata431 ;
+    dcterms:identifier "SUNDA01-K409" .
+
+:terjemahkata431 a :Terjemahan ;
+    rdf:value "nenek"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata410 a :KataNaskah ;
+    rdf:value "incu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata432 ;
+    dcterms:identifier "SUNDA01-K410" .
+
+:terjemahkata432 a :Terjemahan ;
+    rdf:value "cucu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata411 a :KataNaskah ;
+    rdf:value "rambut"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata433 ;
+    dcterms:identifier "SUNDA01-K411" .
+
+:terjemahkata433 a :Terjemahan ;
+    rdf:value "rambut"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata412 a :KataNaskah ;
+    rdf:value "tarang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata434 ;
+    dcterms:identifier "SUNDA01-K412" .
+
+:terjemahkata434 a :Terjemahan ;
+    rdf:value "dahi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata413 a :KataNaskah ;
+    rdf:value "halis"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata435 ;
+    dcterms:identifier "SUNDA01-K413" .
+
+:terjemahkata435 a :Terjemahan ;
+    rdf:value "alis"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata414 a :KataNaskah ;
+    rdf:value "pipi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata436 ;
+    dcterms:identifier "SUNDA01-K414" .
+
+:terjemahkata436 a :Terjemahan ;
+    rdf:value "pipi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata415 a :KataNaskah ;
+    rdf:value "gado"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata437 ;
+    dcterms:identifier "SUNDA01-K415" .
+
+:terjemahkata437 a :Terjemahan ;
+    rdf:value "dagu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata416 a :KataNaskah ;
+    rdf:value "beuheung"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata438 ;
+    dcterms:identifier "SUNDA01-K416" .
+
+:terjemahkata438 a :Terjemahan ;
+    rdf:value "leher"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata417 a :KataNaskah ;
+    rdf:value "dada"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata439 ;
+    dcterms:identifier "SUNDA01-K417" .
+
+:terjemahkata439 a :Terjemahan ;
+    rdf:value "dada"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata418 a :KataNaskah ;
+    rdf:value "ucing"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata440 ;
+    dcterms:identifier "SUNDA01-K418" .
+
+:terjemahkata440 a :Terjemahan ;
+    rdf:value "kucing"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata419 a :KataNaskah ;
+    rdf:value "anjing"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata441 ;
+    dcterms:identifier "SUNDA01-K419" .
+
+:terjemahkata441 a :Terjemahan ;
+    rdf:value "anjing"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata420 a :KataNaskah ;
+    rdf:value "manuk"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata442 ;
+    dcterms:identifier "SUNDA01-K420" .
+
+:terjemahkata442 a :Terjemahan ;
+    rdf:value "burung"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata421 a :KataNaskah ;
+    rdf:value "lauk"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata443 ;
+    dcterms:identifier "SUNDA01-K421" .
+
+:terjemahkata443 a :Terjemahan ;
+    rdf:value "ikan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata422 a :KataNaskah ;
+    rdf:value "oray"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata444 ;
+    dcterms:identifier "SUNDA01-K422" .
+
+:terjemahkata444 a :Terjemahan ;
+    rdf:value "ular"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata423 a :KataNaskah ;
+    rdf:value "hayam"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata445 ;
+    dcterms:identifier "SUNDA01-K423" .
+
+:terjemahkata445 a :Terjemahan ;
+    rdf:value "ayam"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata424 a :KataNaskah ;
+    rdf:value "munding"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata446 ;
+    dcterms:identifier "SUNDA01-K424" .
+
+:terjemahkata446 a :Terjemahan ;
+    rdf:value "kerbau"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata425 a :KataNaskah ;
+    rdf:value "sapi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata447 ;
+    dcterms:identifier "SUNDA01-K425" .
+
+:terjemahkata447 a :Terjemahan ;
+    rdf:value "sapi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata426 a :KataNaskah ;
+    rdf:value "ngajual"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata448 ;
+    dcterms:identifier "SUNDA01-K426" .
+
+:terjemahkata448 a :Terjemahan ;
+    rdf:value "menjual"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata427 a :KataNaskah ;
+    rdf:value "meuli"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata449 ;
+    dcterms:identifier "SUNDA01-K427" .
+
+:terjemahkata449 a :Terjemahan ;
+    rdf:value "membeli"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata428 a :KataNaskah ;
+    rdf:value "masak"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata450 ;
+    dcterms:identifier "SUNDA01-K428" .
+
+:terjemahkata450 a :Terjemahan ;
+    rdf:value "memasak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata429 a :KataNaskah ;
+    rdf:value "nyangu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata451 ;
+    dcterms:identifier "SUNDA01-K429" .
+
+:terjemahkata451 a :Terjemahan ;
+    rdf:value "memasak nasi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata430 a :KataNaskah ;
+    rdf:value "mandi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata452 ;
+    dcterms:identifier "SUNDA01-K430" .
+
+:terjemahkata452 a :Terjemahan ;
+    rdf:value "mandi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata431 a :KataNaskah ;
+    rdf:value "angkat"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata453 ;
+    dcterms:identifier "SUNDA01-K431" .
+
+:terjemahkata453 a :Terjemahan ;
+    rdf:value "pergi (halus)"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata432 a :KataNaskah ;
+    rdf:value "sarebu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata454 ;
+    dcterms:identifier "SUNDA01-K432" .
+
+:terjemahkata454 a :Terjemahan ;
+    rdf:value "seribu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata433 a :KataNaskah ;
+    rdf:value "juta"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata455 ;
+    dcterms:identifier "SUNDA01-K433" .
+
+:terjemahkata455 a :Terjemahan ;
+    rdf:value "juta"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata434 a :KataNaskah ;
+    rdf:value "pinuh"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata456 ;
+    dcterms:identifier "SUNDA01-K434" .
+
+:terjemahkata456 a :Terjemahan ;
+    rdf:value "penuh"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata435 a :KataNaskah ;
+    rdf:value "kosong"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata457 ;
+    dcterms:identifier "SUNDA01-K435" .
+
+:terjemahkata457 a :Terjemahan ;
+    rdf:value "kosong"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata436 a :KataNaskah ;
+    rdf:value "ipis"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata458 ;
+    dcterms:identifier "SUNDA01-K436" .
+
+:terjemahkata458 a :Terjemahan ;
+    rdf:value "tipis"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata437 a :KataNaskah ;
+    rdf:value "kandel"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata459 ;
+    dcterms:identifier "SUNDA01-K437" .
+
+:terjemahkata459 a :Terjemahan ;
+    rdf:value "tebal"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata438 a :KataNaskah ;
+    rdf:value "beunghar"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata460 ;
+    dcterms:identifier "SUNDA01-K438" .
+
+:terjemahkata460 a :Terjemahan ;
+    rdf:value "kaya"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata439 a :KataNaskah ;
+    rdf:value "miskin"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata461 ;
+    dcterms:identifier "SUNDA01-K439" .
+
+:terjemahkata461 a :Terjemahan ;
+    rdf:value "miskin"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata440 a :KataNaskah ;
+    rdf:value "cageur"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata462 ;
+    dcterms:identifier "SUNDA01-K440" .
+
+:terjemahkata462 a :Terjemahan ;
+    rdf:value "sembuh"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata441 a :KataNaskah ;
+    rdf:value "anggang"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata463 ;
+    dcterms:identifier "SUNDA01-K441" .
+
+:terjemahkata463 a :Terjemahan ;
+    rdf:value "renggang"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata442 a :KataNaskah ;
+    rdf:value "panto"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata464 ;
+    dcterms:identifier "SUNDA01-K442" .
+
+:terjemahkata464 a :Terjemahan ;
+    rdf:value "pintu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata443 a :KataNaskah ;
+    rdf:value "jandela"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata465 ;
+    dcterms:identifier "SUNDA01-K443" .
+
+:terjemahkata465 a :Terjemahan ;
+    rdf:value "jendela"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata444 a :KataNaskah ;
+    rdf:value "meja"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata466 ;
+    dcterms:identifier "SUNDA01-K444" .
+
+:terjemahkata466 a :Terjemahan ;
+    rdf:value "meja"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata445 a :KataNaskah ;
+    rdf:value "korsi"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata467 ;
+    dcterms:identifier "SUNDA01-K445" .
+
+:terjemahkata467 a :Terjemahan ;
+    rdf:value "kursi"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata446 a :KataNaskah ;
+    rdf:value "lampu"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata468 ;
+    dcterms:identifier "SUNDA01-K446" .
+
+:terjemahkata468 a :Terjemahan ;
+    rdf:value "lampu"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata447 a :KataNaskah ;
+    rdf:value "benteng"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata469 ;
+    dcterms:identifier "SUNDA01-K447" .
+
+:terjemahkata469 a :Terjemahan ;
+    rdf:value "benteng"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata448 a :KataNaskah ;
+    rdf:value "karaton"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata470 ;
+    dcterms:identifier "SUNDA01-K448" .
+
+:terjemahkata470 a :Terjemahan ;
+    rdf:value "keraton"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+
+
+:kata449 a :KataNaskah ;
+    rdf:value "emas"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata471 ;
+    dcterms:identifier "SUNDA01-K449" .
+
+:terjemahkata471 a :Terjemahan ;
+    rdf:value "emas"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata450 a :KataNaskah ;
+    rdf:value "perak"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata472 ;
+    dcterms:identifier "SUNDA01-K450" .
+
+:terjemahkata472 a :Terjemahan ;
+    rdf:value "perak"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata451 a :KataNaskah ;
+    rdf:value "calana"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata473 ;
+    dcterms:identifier "SUNDA01-K451" .
+
+:terjemahkata473 a :Terjemahan ;
+    rdf:value "celana"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata452 a :KataNaskah ;
+    rdf:value "beuteung"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata474 ;
+    dcterms:identifier "SUNDA01-K452" .
+
+:terjemahkata474 a :Terjemahan ;
+    rdf:value "perut"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata453 a :KataNaskah ;
+    rdf:value "sirah"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata475 ;
+    dcterms:identifier "SUNDA01-K453" .
+
+:terjemahkata475 a :Terjemahan ;
+    rdf:value "kepala"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata454 a :KataNaskah ;
+    rdf:value "leungeun"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata476 ;
+    dcterms:identifier "SUNDA01-K454" .
+
+:terjemahkata476 a :Terjemahan ;
+    rdf:value "tangan"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
+
+:kata455 a :KataNaskah ;
+    rdf:value "suku"@su ;
+    :isFromManuscript :naskahSunda01 ;
+    :hasTranslation :terjemahkata477 ;
+    dcterms:identifier "SUNDA01-K455" .
+
+:terjemahkata477 a :Terjemahan ;
+    rdf:value "kaki"@id ;
+    :keBahasa "id" ;
+    :dariBahasa "su" .
